@@ -6,6 +6,8 @@ module.exports = function(environment) {
     modulePrefix: 'umami',
     environment,
     rootURL: '/',
+    host: '', //drupal
+    namespace: 'api',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -44,7 +46,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.host = ''; //drupal
+    ENV.namespace = 'api';
   }
 
   return ENV;
