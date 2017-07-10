@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('recipes', function() {
+    this.route('recipe', {path: '/:slug'});
+  });
+  this.route('features', function() {
+    this.route('article'), {path: '/:slug'};
+  });
   this.route('loading');
   this.route('notfound', {path: '*path'});
 });
