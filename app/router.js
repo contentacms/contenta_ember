@@ -8,13 +8,17 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('recipes', function() {
-    this.route('recipe', {path: '/:slug'});
+    this.route('show', { path: '/:recipe_id' });
   });
   this.route('features', function() {
     this.route('article'), {path: '/:slug'};
   });
   this.route('loading');
   this.route('notfound', {path: '*path'});
+  this.route('about');
+  this.route('contact');
+  this.route('categories');
+  this.route('reviews', function() {});
 });
 
 export default Router;
