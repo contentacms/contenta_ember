@@ -1,0 +1,8 @@
+
+    <ul class="results">
+        {{#each model as |recipeUnit|}}
+            <li>{{recipe-listing recipe=recipeUnit}}</li>
+        {{/each}}
+    </ul>
+
+{{outlet}}

@@ -1,0 +1,14 @@
+<div class="jumbo">
+    <div class="right tomster"></div>
+    <h2>Welcome!</h2>
+    <p>
+        We hope you find exactly what you're looking for in a place to stay.
+    </p>
+</div>
+
+
+    <ul class="results">
+        {{#each model as |categoryUnit|}}
+            <li>{{categoryUnit.name}}</li>
+        {{/each}}
+    </ul>
