@@ -29,10 +29,8 @@
 <div class="detail reviews">
     <span>Recipe reviews and testimonials:</span>
 
-    {{recipe.reviews}}
-    {{#each recipe.reviews as |reviewUnits index|}}
-{{index}}
-        {{recipe.reviews}}
+    {{#each recipe.review as |reviewUnit index|}}
+        {{reviewUnit}} {{index}}
     {{else}}
         Sorry, nobody is here.
     {{/each}}

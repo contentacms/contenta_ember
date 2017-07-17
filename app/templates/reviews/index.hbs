@@ -1,0 +1,8 @@
+
+<ul class="results">
+    {{#each model as |reviewUnit|}}
+        <li>{{review-listing review=reviewUnit}}</li>
+    {{/each}}
+</ul>
+
+{{outlet}}
