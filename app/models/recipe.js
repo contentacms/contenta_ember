@@ -8,7 +8,7 @@ export default DS.Model.extend({
   isPublished: DS.attr('boolean'),
   path: DS.attr('string'),
   difficulty: DS.attr('string'),
-  ingredients: DS.attr('string'),
+  ingredients: DS.attr(),
   instructions: DS.attr('string'),
   internalId: DS.attr(),
   numberOfServices: DS.attr('string'),

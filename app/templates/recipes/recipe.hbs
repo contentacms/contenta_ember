@@ -11,7 +11,13 @@
         <p>Published: {{recipe.isPublished}}</p>
         <p>Path: {{recipe.path}}</p>
         <p>Difficulty: {{recipe.difficulty}}</p>
-        <p>Ingredients: {{recipe.ingredients}}</p>
+        <p>Ingredients:
+          <ul>
+            {{#each recipe.ingredients key="@index" as |ingredient|}}
+              <li>{{ingredient}}</li>
+            {{/each}}
+          </ul>
+        </p>
         <p>Instructions: {{recipe.instructions}}</p>
         <p>id: {{recipe.internalId}}</p>
         <p>Number Of Services: {{recipe.numberOfServices}}</p>
