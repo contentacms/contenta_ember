@@ -6,5 +6,5 @@ export default DS.Model.extend({
   updatedAt: DS.attr('string'),
   imageFile: DS.belongsTo('file'),
   owner: DS.belongsTo('user'),
-  thumbnail: DS.belongsTo('file')
+  thumbnail: DS.belongsTo('file'),
 });

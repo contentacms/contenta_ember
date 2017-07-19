@@ -8,7 +8,7 @@ export default DS.Model.extend({
   isPublished: DS.attr('boolean'),
   path: DS.attr('string'),
   body: DS.attr('string'),
-  image: DS.belongsTo('file'),
+  image: DS.belongsTo('image'),
   category: DS.belongsTo('category'),
   tag: DS.hasMany('tag')
 });

@@ -2,9 +2,9 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  var ENV = {
     modulePrefix: 'umami',
-    environment,
+    environment: environment,
     rootURL: '/',
     host: 'https://dev-contentacms.pantheonsite.io', //drupal
     namespace: 'api',
