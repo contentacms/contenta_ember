@@ -1,12 +1,13 @@
 <div class="row">
-{{#if recipe}}
-  <div class="col">
-    <h4 class="panel-title">{{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}</h4>
-      <div class="detail image">
-          <span>Image:</span> {{recipe.image.imageFile.url}} <img src="{{recipe.image.imageFile.url}}" alt="">
+    {{#if recipe}}
+      <div class="col">
+         <div class="detail image" local-class="detail image">
+         <div class="{{local-class 'hello-class'}}">
+             <img src="{{recipe.image.imageFile.url}}" alt="{{recipe.imageFile.url}}">
+         </div></div>
+        <h4 class="panel-title">{{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}</h4>
       </div>
-  </div>
-{{else}}
-  <span>Sorry, There aren't any recipes at this time.</span>
-{{/if}}
+    {{else}}
+      <span>Sorry, There aren't any recipes at this time.</span>
+    {{/if}}
 </div>
