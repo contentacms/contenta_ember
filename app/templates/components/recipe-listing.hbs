@@ -1,39 +1,10 @@
 <article class="listing">
-    <img src="{{recipe.image}}" alt="">
-    <h3>{{#link-to "recipes.show" recipe}}{{recipe.title}}{{/link-to}}</h3>
-    <div class="detail ingredients">
-        <span>Ingredients:</span> {{recipe.ingredients}}
-    </div>
     <div class="detail category">
-        <span>Category:</span> {{recipe.category}}
+        <span>Category:</span> {{recipe.category.name}}
     </div>
-    <div class="detail instruction">
-        <span>Difficulty:</span> {{recipe.difficulty}}
+      <div class="detail image">
+      {{#each recipe.image as pic}}
+          <span>Imag:</span> {{pic.imageFile.url }} <img src="{{pic.imageFile.url}}" alt="">
+      {{/each}}
     </div>
-    <div class="detail image">
-        <span>Image:</span> {{recipe.image}} <img src="{{recipe.image}}" alt="">
-    </div>
-    <div class="detail services">
-        <span>Number of Services:</span> {{recipe.number_of_services}}
-    </div>
-    <div class="detail preparation time">
-        <span>Preparation Time:</span> {{recipe.preparationTime}}
-    </div>
-
-    <div class="detail instruction">
-        <span>Recipe Instructions:</span> {{recipe.instructions}}
-    </div>
-    <div class="detail preparation time">
-        <span>Total Time:</span> {{recipe.totalTime}}
-    </div>
-<div class="detail reviews">
-    <span>Recipe reviews and testimonials:</span>
-
-    {{#each recipe.review as |reviewUnit index|}}
-        {{reviewUnit}} {{index}}
-    {{else}}
-        Sorry, nobody is here.
-    {{/each}}
-</div>
-
 </article>

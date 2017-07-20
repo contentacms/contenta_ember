@@ -1,0 +1,49 @@
+<!-- This is just an example of the api output, for ease of development. The recipe should be built with components.-->
+
+<div class="container">
+  <div class="recipe">
+    <div class="content">
+      <div class="title text-center">
+        <h1>{{recipe.title}}</h1>
+        <p>Created: {{recipe.createdAt}}</p>
+        <p>Updated: {{recipe.updatedAt}}</p>
+        <p>Promoted: {{recipe.isPromoted}}</p>
+        <p>Published: {{recipe.isPublished}}</p>
+        <p>Path: {{recipe.path}}</p>
+        <p>Difficulty: {{recipe.difficulty}}</p>
+        <p>Ingredients:
+          <ul>
+            {{#each recipe.ingredients key="@index" as |ingredient|}}
+              <li>{{ingredient}}</li>
+            {{/each}}
+          </ul>
+        </p>
+        <p>Instructions: {{recipe.instructions}}</p>
+        <p>id: {{recipe.internalId}}</p>
+        <p>Number Of Services: {{recipe.numberOfServices}}</p>
+        <p>Preparation Time: {{recipe.preparationTime}}</p>
+        <p>Total Time: {{recipe.totalTime}}</p>
+        <p>Category: {{recipe.category.name}}</p>
+        <p>Image: {{recipe.image.imageFile.url}}</p>
+        <p>Thumbnail: {{recipe.image.thumbnail.url}}</p>
+        <p>Reviews:
+        <ul>
+          {{#each recipe.reviews as |review|}}
+            <li><b>{{review.subject}}</b>
+            <p>{{review.body}}</p>
+            </li>
+          {{/each}}
+        </ul></p>
+        <p>Tags: <br>
+          <ul>
+            {{#each recipe.tags as |tag|}}
+              <li>{{tag.name}}</li>
+            {{/each}}
+          </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{outlet}}
