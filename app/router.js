@@ -18,8 +18,12 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('categories');
-  this.route('articles');
-  this.route('reviews', function() {});
+  this.route('articles', function() {
+    this.route('article', { path: '/:article_id' });
+  });
+  this.route('reviews', function() {
+    this.route('review', { path: '/:review_id' });
+  });
 });
 
 export default Router;

@@ -1,22 +1,8 @@
-<!-- This is just an example of the api output, for ease of development. This page should be built with components.-->
-<div class="container">
-  <div class="recipes">
-    <div class="content">
-      <div class="title text-center">
-        <h1>Recipes</h1>
-      </div>
-      <div class='recipes'>
+<h2>Recipes</h2>
+    <ul class="results">
         {{#each recipes as |recipe|}}
-xxx{{recipe}}
-
-<div class="row">
-{{recipe-listing recipe=recipe}}
-</div>
-
-
-       {{/each}}
-      </div>
-    </div>
-  </div>
-</div>
+            {{recipe-listing/recipe-listing recipe=recipe}}
+        {{/each}}
+    </ul>
 {{outlet}}
+
