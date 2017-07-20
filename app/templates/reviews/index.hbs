@@ -1,8 +1,7 @@
-
-<ul class="results">
-    {{#each model as |reviewUnit|}}
-        <li>{{review-listing review=reviewUnit}}</li>
-    {{/each}}
-</ul>
-
+<h2>Reviews</h2>
+    <ul class="results">
+        {{#each reviews as |review|}}
+            {{review-listing/review-listing review=review}}
+        {{/each}}
+    </ul>
 {{outlet}}

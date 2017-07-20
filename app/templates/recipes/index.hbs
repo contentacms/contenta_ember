@@ -1,28 +1,8 @@
-<!-- This is just an example of the api output, for ease of development. This page should be built with components.-->
-<div class="container">
-  <div class="recipes">
-    <div class="content">
-      <div class="title text-center">
-        <h1>Recipes</h1>
-      </div>
-      <div class='recipes'>
+<h2>Recipes</h2>
+    <ul class="results">
         {{#each recipes as |recipe|}}
-          <div class="row">
-            {{#if recipe}}
-              <div class="col">
-                <h4 class="panel-title">{{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}</h4>
-                  <div class="detail image">
-                      <span>Image:</span> {{recipe.image.imageFile.url}} <img src="{{recipe.image.imageFile.url}}" alt="">
-                  </div>
-                  <li>{{recipe-listing recipe=recipe}}</li>
-              </div>
-            {{else}}
-              <span>Sorry, There aren't any recipes at this time.</span>
-            {{/if}}
-          </div>
+            {{recipe-listing/recipe-listing recipe=recipe}}
         {{/each}}
-      </div>
-    </div>
-  </div>
-</div>
+    </ul>
 {{outlet}}
+

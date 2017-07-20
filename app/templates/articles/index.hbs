@@ -1,8 +1,7 @@
-
+<h2>Articles</h2>
     <ul class="results">
-        {{#each model as |articleUnit|}}
-            <li>{{article-listing article=articleUnit}}</li>
+        {{#each articles as |article|}}
+            {{article-listing/article-listing article=article}}
         {{/each}}
     </ul>
-
 {{outlet}}

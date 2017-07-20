@@ -4,7 +4,7 @@ export default Ember.Route.extend({
 
   model() {
     return Ember.RSVP.hash({
-      articles:  this.store.query('article', {
+      reviews:  this.store.query('review', {
         sort: "-createdAt",
         page: {
           limit: 10,
@@ -15,7 +15,6 @@ export default Ember.Route.extend({
   },
 
   setupController(controller, models) {
-    controller.set('articles', models.articles);
+    controller.set('reviews', models.reviews);
   }
-
 });
