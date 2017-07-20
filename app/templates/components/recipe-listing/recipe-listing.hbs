@@ -1,8 +1,12 @@
-<article >
-    <div class="detail review">
-    This is the component
-        <h1>{{recipe.title}}</h1>
-
-                <p>{{recipe.body}}</p>
-    </div>
-</article>
+<div class="row">
+{{#if recipe}}
+  <div class="col">
+    <h4 class="panel-title">{{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}</h4>
+      <div class="detail image">
+          <span>Image:</span> {{recipe.image.imageFile.url}} <img src="{{recipe.image.imageFile.url}}" alt="">
+      </div>
+  </div>
+{{else}}
+  <span>Sorry, There aren't any recipes at this time.</span>
+{{/if}}
+</div>
