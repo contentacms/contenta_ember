@@ -7,20 +7,14 @@
       </div>
       <div class='recipes'>
         {{#each recipes as |recipe|}}
-          <div class="row">
-            {{#if recipe}}
-              <div class="col">
-                <h4 class="panel-title">{{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}</h4>
-                  <div class="detail image">
-                      <span>Image:</span> {{recipe.image.imageFile.url}} <img src="{{recipe.image.imageFile.url}}" alt="">
-                  </div>
-                  <li>{{recipe-listing recipe=recipe}}</li>
-              </div>
-            {{else}}
-              <span>Sorry, There aren't any recipes at this time.</span>
-            {{/if}}
-          </div>
-        {{/each}}
+xxx{{recipe}}
+
+<div class="row">
+{{recipe-listing recipe=recipe}}
+</div>
+
+
+       {{/each}}
       </div>
     </div>
   </div>
