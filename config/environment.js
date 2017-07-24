@@ -6,7 +6,7 @@ module.exports = function(environment) {
     modulePrefix: 'umami',
     environment: environment,
     rootURL: '/',
-    host: 'https://dev-contentacms.pantheonsite.io', //drupal
+    host: 'http://live-contentacms.pantheonsite.io', //drupal
     namespace: 'api',
     locationType: 'auto',
     EmberENV: {
@@ -46,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = 'https://dev-contentacms.pantheonsite.io'; //drupal
+    ENV.host = 'http://live-contentacms.pantheonsite.io'; //drupal
     ENV.namespace = 'api';
   }
 
