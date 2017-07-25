@@ -44,5 +44,10 @@
     "node": ">= 4"
   },
   "private": true,
-  "false": {}
+  "false": {},
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "postcss": "^6.0.8",
+    "postcss-nested": "^2.0.4"
+  }
 }
