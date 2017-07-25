@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'global';
+@import 'media';
 
 @mixin container {
   max-width: 1024px;
@@ -12,43 +13,15 @@
 
   a:link {
     text-decoration: none;
-    color: black;
+    color: $black;
   }
   a:visited {
     text-decoration: none;
-    color: #333;
+    color: $grey-dark;
   }
   a:hover {
     text-decoration: none;
-    color: grey;
-  }
-
-  header {
-    //background: orange;
-    width: 100%;
-    padding: 1rem 0;
-
-    h1 {
-      margin: 0;
-    }
-l
-    .menu {
-      display: flex;
-      -webkit-flex-wrap: wrap; /* Safari */
-      flex-wrap: wrap;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
-    }
-
-    .links {
-      width: 60%;
-      display: inherit;
-      -webkit-flex-wrap: nowrap; /* Safari */
-      flex-wrap: nowrap;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
-    }
-
+    color: $grey-med;
   }
 
   .container,

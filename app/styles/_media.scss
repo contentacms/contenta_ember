@@ -1,0 +1,57 @@
+@media (min-width: $medium) {
+
+
+  .footer .block:first-child,
+  .subscribe .block:first-child {
+    max-width: 70%;
+    padding: 0 1rem 0 0;
+  }
+
+  .footer .block:last-child,
+  .subscribe .block:last-child {
+    width: 30%;
+  }
+
+
+  .collections ul li {
+    width: 33%;
+  }
+
+}
+
+
+@media (min-width: $large) {
+
+  .collections ul li {
+    width: 25%;
+  }
+
+  .shelf {
+    padding: 1rem 0;
+  }
+
+  header > h1 {
+    margin: 0;
+  }
+
+  header {
+
+    .menu {
+      padding: 1rem 0;
+    }
+
+    .links {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      a {
+        padding: 0 0 0 1rem;
+      }
+
+    }
+
+  }
+
+
+
+}

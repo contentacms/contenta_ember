@@ -24,6 +24,7 @@ Router.map(function() {
   this.route('reviews', function() {
     this.route('review', { path: '/:review_id' });
   });
+  this.route('login');
 });
 
 export default Router;
