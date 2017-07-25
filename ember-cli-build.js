@@ -2,10 +2,38 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const nested = require('postcss-nested');
+const autoprefixer = require('autoprefixer');
+
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
+
+      cssModules: {
+
+        plugins: {
+          before: [
+            nested
+          ],
+          after: [
+            autoprefixer('last 2 versions')
+          ]
+        },
+
+        // Emit a combined SCSS file for ember-cli-sass to compile
+        intermediateOutputPath: 'app/styles/app.scss',
+
+        // Use .scss as the extension for CSS modules instead of the default .css
+        extension: 'scss',
+
+        // Pass a custom parser/stringifyer through to PostCSS for processing modules
+        postcssOptions: {
+          syntax: require('postcss-scss')
+        }
+
+      }
+
   });
 
   // Use `app.import` to add additional libraries to the generated

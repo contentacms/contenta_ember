@@ -1,12 +1,43 @@
-<div class="row">
 {{#if recipe}}
-  <div class="col">
-    <h4 class="panel-title">{{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}</h4>
-      <div class="detail image">
-          <span>Image:</span> {{recipe.image.imageFile.url}} <img src="{{recipe.image.imageFile.url}}" alt="">
-      </div>
-  </div>
-{{else}}
-  <span>Sorry, There aren't any recipes at this time.</span>
+         <div class="mat-card">
+             <div local-class="card-image" class="card-image">
+                 <img class="mat-card-image" src="{{recipe.image.imageFile.url}}" alt="{{recipe.imageFile.url}}">
+             </div>
+
+             <div class="mat-card-content">
+                 <div class="card-title mat-card-title">
+                   <div class="title">
+                        {{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}
+                    </div>
+                 </div>
+                 <div class="mat-card-subtitle">
+                   <div class="subtitle">
+                    <div>
+                        <div class="mat-chip-list" role="listbox" tabindex="0">
+                            <div class="mat-chip-list-wrapper">
+                                <div class="mat-chip mat-primary" role="option" tabindex="-1" aria-disabled="false">{{recipe.difficulty}}</div>
+                               </div>
+                           </div>
+                        </div>
+                    <div>
+                        <div class="subtitle-icon mat-icon mat-primary" role="img" aria-hidden="true">
+                            <svg fill="#000000" height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path>
+                            </svg>
+                        </div>
+                        <span>{{recipe.preparationTime}} min</span>
+                    </div>
+                </div>
+                </div>
+               </div>
+
+               <div class="actions mat-card-actions">
+                   {{#link-to 'recipes.recipe' recipe.id class='mat-button mat-raised-button mat-primary' aria-disabled='false' tabindex='0'}}
+                   <span class="mat-button-wrapper">Read full recipe</span><div class="mat-button-ripple mat-ripple" md-ripple=""></div><div class="mat-button-focus-overlay"></div>
+                   {{/link-to}}
+                </div>
+        </div>
+    {{else}}
+    <p>Sorry, There aren't any recipes at this time.</p>
 {{/if}}
-</div>
