@@ -1,8 +1,7 @@
 <h2>Recipes</h2>
-    <ul class="results">
+    <ul class="flex-container wrap">
         {{#each recipes as |recipe|}}
-            {{recipe-listing/recipe-listing recipe=recipe}}
+            <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
         {{/each}}
     </ul>
 {{outlet}}
-

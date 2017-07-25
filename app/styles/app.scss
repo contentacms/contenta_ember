@@ -1,0 +1,60 @@
+@import 'normalize';
+@import 'global';
+
+@mixin container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+:global {
+
+  a:link {
+    text-decoration: none;
+    color: black;
+  }
+  a:visited {
+    text-decoration: none;
+    color: #333;
+  }
+  a:hover {
+    text-decoration: none;
+    color: grey;
+  }
+
+  header {
+    //background: orange;
+    width: 100%;
+    padding: 1rem 0;
+
+    h1 {
+      margin: 0;
+    }
+l
+    .menu {
+      display: flex;
+      -webkit-flex-wrap: wrap; /* Safari */
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+
+    .links {
+      width: 60%;
+      display: inherit;
+      -webkit-flex-wrap: nowrap; /* Safari */
+      flex-wrap: nowrap;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+
+  }
+
+  .container,
+  header .menu {
+    @include container;
+  }
+}
+
+
