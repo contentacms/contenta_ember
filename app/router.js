@@ -17,7 +17,10 @@ Router.map(function() {
   this.route('notfound', {path: '*path'});
   this.route('about');
   this.route('contact');
-  this.route('categories');
+
+  this.route('categories', function() {
+    this.route('category', { path: '/:category_id' });
+  });
   this.route('articles', function() {
     this.route('article', { path: '/:article_id' });
   });

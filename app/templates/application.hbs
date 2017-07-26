@@ -50,6 +50,8 @@
     </div>
 </header>
 
+{{ hero-image/hero-image }}
+
 <div class="container">
     <div class="body">
         {{outlet}}
@@ -59,26 +61,8 @@
 
 <footer>
 
-    <div class="collections">
-        <div class="container">
-            <h3>Recipe collections</h3>
-            <ul>
-                <li>Breads</li>
-                <li>Catalan</li>
-                <li>Fish</li>
-                <li>French</li>
-                <li>Healthy</li>
-                <li>Italian</li>
-                <li>Japanese</li>
-                <li>Low carb</li>
-                <li>Meat</li>
-                <li>Nut-free</li>
-                <li>Pastry</li>
-                <li>Vegan</li>
-                <li>Vegetarian</li>
-            </ul>
-        </div>
-    </div>
+    {{categories-listing/categories-listing}}
+
 
     <div class="subscribe">
         <div class="container">
