@@ -12,3 +12,4 @@ export default DS.Model.extend({
   category: DS.belongsTo('category'),
   tag: DS.hasMany('tag')
 });
+

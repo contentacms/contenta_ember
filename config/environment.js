@@ -2,11 +2,11 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  var ENV = {
     modulePrefix: 'umami',
-    environment,
+    environment: environment,
     rootURL: '/',
-    host: '', //drupal
+    host: 'http://live-contentacms.pantheonsite.io', //drupal
     namespace: 'api',
     locationType: 'auto',
     EmberENV: {
@@ -46,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = ''; //drupal
+    ENV.host = 'http://live-contentacms.pantheonsite.io'; //drupal
     ENV.namespace = 'api';
   }
 
