@@ -8,7 +8,7 @@ export default Ember.Route.extend({
       recipes:  this.store.query('recipe', {
         sort: "-createdAt",
         page: {
-          limit: 10,
+          limit: 30,
         },
         filter: {}
       }),
