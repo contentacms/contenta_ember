@@ -74,7 +74,7 @@ header {
         color: $orange;
         position: relative;
         &::after {
-          content: "-.-";
+          content: "●";
           display: block;
           text-align: center;
         }
