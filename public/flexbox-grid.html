@@ -65,41 +65,30 @@
 
     .grid-50 .flex-item {
         background: gold;
-        width: 50%;
     }
 
     .grid-50-0 .flex-item {
         background: salmon;
-        width: 50%;
-    }
-
-    .grid-0-50 {
-        justify-content: flex-end;
     }
 
     .grid-0-50 .flex-item {
         background: LIGHTPINK;
-        width: 50%;
     }
 
     .grid-25 .flex-item {
         background: LIMEGREEN;
-        width: 25%;
     }
 
     .grid-25.double .flex-item:first-child {
         background: BURLYWOOD;
-        width: 50%;
     }
 
     .grid-33 .flex-item {
         background: LIGHTBLUE;
-        width: 33.3333%;
     }
 
     .grid-33.double .flex-item:first-child {
         background: ROSYBROWN;
-        width: 66.66666%;
     }
 
     .grid-100 .flex-item {
@@ -111,6 +100,42 @@
     .flex-item .block {
       padding: 1rem;
       border: 2px solid white;
+    }
+
+    @media (min-width: 640px) {
+
+      .grid-50 .flex-item {
+        width: 50%;
+      }
+
+      .grid-50-0 .flex-item {
+        width: 50%;
+      }
+
+      .grid-0-50 {
+        justify-content: flex-end;
+      }
+
+      .grid-0-50 .flex-item {
+        width: 50%;
+      }
+
+      .grid-25 .flex-item {
+        width: 25%;
+      }
+
+      .grid-25.double .flex-item:first-child {
+        width: 50%;
+      }
+
+      .grid-33 .flex-item {
+        width: 33.3333%;
+      }
+
+      .grid-33.double .flex-item:first-child {
+        width: 66.66666%;
+      }
+
     }
 
 </style>
