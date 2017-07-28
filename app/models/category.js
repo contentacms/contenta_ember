@@ -5,4 +5,5 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   path: DS.attr('string'),
   weight: DS.attr(),
+  recipe: DS.hasMany('recipe'),
 });

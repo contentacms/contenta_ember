@@ -17,6 +17,47 @@
     width: 33%;
   }
 
+
+
+
+  .grid-50 .flex-item {
+    width: 50%;
+  }
+
+  .grid-50-0 .flex-item {
+    width: 50%;
+  }
+
+  .grid-0-50 {
+    justify-content: flex-end;
+  }
+
+  .grid-0-50 .flex-item {
+    width: 50%;
+  }
+
+  .grid-25 .flex-item {
+    width: 25%;
+  }
+
+  .grid-25.double .flex-item:first-child {
+    width: 50%;
+  }
+
+  .grid-33 .flex-item {
+    width: 33.3333%;
+  }
+
+  .grid-33.double .flex-item:first-child {
+    width: 66.66666%;
+  }
+
+
+
+
+
+
+
 }
 
 

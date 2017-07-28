@@ -17,11 +17,11 @@
   }
   a:visited {
     text-decoration: none;
-    color: $grey-dark;
+    color: lighten($grey-dark, 5%);
   }
   a:hover {
     text-decoration: none;
-    color: $grey-med;
+    color: $grey-dark;
   }
 
   .container,

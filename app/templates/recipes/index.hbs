@@ -1,22 +1,44 @@
-<h2>Main Course</h2>
+<div class="wrapper">
+    <div class="container">
 
-{{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
-    <ul class="flex-container wrap">
-        {{#each recipeList as |recipe|}}
-            <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
-        {{/each}}
-    </ul>
-{{/list-filter}}
+        <h2>Recipes</h2>
 
-<h2>Starters</h2>
-{{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
-<ul class="flex-container wrap">
-    {{#each recipeList as |recipe|}}
-        <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
-    {{/each}}
-</ul>
-{{/list-filter}}
+        {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
+            <ul class="flex-container wrap grid-50">
+                {{#each recipeList as |recipe|}}
+                    <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                {{/each}}
+            </ul>
+        {{/list-filter}}
 
-{{outlet}}
+
+
+
+        <h2>Main Course</h2>
+
+        {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
+            <ul class="flex-container wrap grid-33">
+                {{#each recipeList as |recipe|}}
+                    <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                {{/each}}
+            </ul>
+        {{/list-filter}}
+
+
+
+
+        <h2>Starters</h2>
+        {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
+        <ul class="flex-container wrap grid-25">
+            {{#each recipeList as |recipe|}}
+                <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+            {{/each}}
+        </ul>
+        {{/list-filter}}
+
+        {{outlet}}
+
+    </div>
+</div>
 
 
