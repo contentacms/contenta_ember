@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
                return this.get('store').query('recipe', {
 
                    page: {
-                       limit: 3,
+                       limit: 4,
                    }
                });
             //    return Ember.Controller.firstTenRecipes;
@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
                 return this.get('store').query('recipe', {
 
                     page: {
-                        limit: 3,
+                        limit: 4,
                     }
                 });
             }
