@@ -29,13 +29,13 @@ export default Ember.Controller.extend({
     },
 
     featureRecipes(param) {
-        return this.get('store').query('recipe', {
-          category: param,
-          page: {
-            limit: 4
-          }
-        });
-      }
+      return this.get('store').query('recipe', {
+        category: param,
+        page: {
+          limit: 4
+        }
+      });
     }
+  }
 
 });
