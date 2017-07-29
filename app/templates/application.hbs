@@ -30,7 +30,25 @@
     </div>
 {{/if}}
 
-{{ featured-recipes }}
+
+{{!-- {{I would really prefer this as a component (see feature-recipes.hbs) but I'm not sure how to get the data in the component}} --}}
+<div class="wrapper full features">
+  <div class="container">
+
+    <h2>Recipes</h2>
+    <h3>with some text</h3>
+    {{#promoted-filter filter=(action 'featureRecipes')as |promotedList|}}
+        <ul class="flex-container wrap grid-50">
+            {{#each promotedList as |recipe|}}
+                <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+            {{/each}}
+        </ul>
+    {{/promoted-filter}}
+
+  </div>
+</div>
+
+
 
 <footer>
 
