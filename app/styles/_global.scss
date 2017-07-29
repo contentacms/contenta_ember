@@ -279,7 +279,8 @@ header {
 }
 
 
-.mat-button, .mat-fab, .mat-icon-button, .mat-mini-fab, .mat-raised-button {
+.mat-button, .mat-fab, .mat-icon-button, .mat-mini-fab, .mat-raised-button,
+.cta {
   box-sizing: border-box;
   position: relative;
   -webkit-user-select: none;
@@ -455,4 +456,9 @@ ul.tags {
 .recipe-image {
   position: relative;
   overflow: hidden;
+}
+
+.highlight.full {
+  background: $grey-light url(/assets/images/open-book-outline.svg) 8% 15% no-repeat;
+  background-size: 30%;
 }

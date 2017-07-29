@@ -24,8 +24,4 @@ export default Ember.Route.extend({
     controller.set('recipes', models.recipes);
   },
 
-  afterModel() {
-    console.log(this.get('routeName'));
-  }
-
 });

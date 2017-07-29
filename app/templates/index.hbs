@@ -1,3 +1,20 @@
-{{ outlet }}
+{{outlet}}
 
-front page content here
+<div class="wrapper promoted">
+  <div class="container">
+      {{#promoted-filter filter=(action 'filterByPromoted')as |recipeList|}}
+          <ul class="flex-container wrap grid-25 double">
+              {{#each recipeList as |recipe|}}
+
+                {{#if (eq recipe recipeList.firstObject) }}
+                  <li class="flex-item">{{promoted-listing-main recipe=recipe}}</li>
+                {{else}}
+                  <li class="flex-item">{{promoted-listing recipe=recipe}}</li>
+                {{/if}}
+
+              {{/each}}
+          </ul>
+      {{/promoted-filter}}
+  </div>
+</div>
+

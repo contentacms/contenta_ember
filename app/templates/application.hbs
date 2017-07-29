@@ -6,19 +6,29 @@
     {{ banner-area }}
 {{/if}}
 
+{{!-- {{this is an awkward way to control where the content area displays for the front page only}} --}}
+{{#if (eq currentRouteName 'index')}}
+    <div class="container">
+        <div class="body">
+            {{outlet}}
+        </div>
+    </div>
+{{/if}}
+
 {{#if (eq currentRouteName 'index') }}
-    {{ promoted-listing }}
-
     {{ highlight-area }}
-
     {{ theme-listing }}
 {{/if}}
 
-<div class="container">
-    <div class="body">
-        {{outlet}}
+
+{{!-- {{this is where the content area displays for all other pages}} --}}
+{{#if (not-eq currentRouteName 'index')}}
+    <div class="container">
+        <div class="body">
+            {{outlet}}
+        </div>
     </div>
-</div>
+{{/if}}
 
 {{ featured-recipes }}
 
