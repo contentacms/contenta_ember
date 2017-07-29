@@ -17,5 +17,6 @@ export default DS.Model.extend({
   category: DS.belongsTo('category'),
   image: DS.belongsTo('image'),
   reviews: DS.hasMany('review'),
-  tags: DS.hasMany('tag')
+  tags: DS.hasMany('tag'),
+  texts: DS.attr('string')
 });

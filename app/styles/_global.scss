@@ -117,14 +117,12 @@ header {
   padding: 1rem;
   width: 100%;
   color: white;
-  font-weight: bold;
-  font-size: 2em;
   text-align: left;
   border: 1px solid grey;
 }
 
 .grid-50 .flex-item {
-  background: gold;
+  background: SANDYBROWN;
 }
 
 .grid-50-0 .flex-item {
@@ -305,8 +303,12 @@ header {
 }
 
 
+h1 {
+  font-family: $roboto;
+  font-weight: 500;
+}
+
 h2 {
-  text-align: center;
   color: $grey-dark;
   font-family: $roboto;
   font-weight: 500;
@@ -331,6 +333,44 @@ h4 {
 
 
 
+.category {
+  margin: 0;
+  text-align: right;
+}
+
+ul.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    // coma separated inline list
+    &::after {
+      content: ','
+    }
+    &:last-child::after {
+      content: ''
+    }
+  }
+
+}
+
+.card-image {
+  position: relative;
+}
+
+.is-promoted {
+  display: block;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: $orange;
+  color: $white;
+  padding: 0 0.5rem;
+}
+
 .collections ul {
   list-style: none;
   padding: 0;
@@ -352,10 +392,13 @@ h4 {
 .collections,
 .footer,
 .subscribe,
-.themes,
 .features,
 .promoted {
   padding: 1rem 1rem 2rem;
+}
+
+.themes {
+  padding: 1rem 0 2rem;
 }
 
 // this gives children divs flexbox
@@ -394,3 +437,22 @@ h4 {
 }
 
 
+.page-title h1 {
+  margin: 0;
+}
+
+.recipe-specs .flex-item {
+  text-align: center;
+  padding: 1rem 0;
+
+  svg {
+    fill: $white;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.recipe-image {
+  position: relative;
+  overflow: hidden;
+}
