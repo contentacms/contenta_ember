@@ -53,33 +53,29 @@
 <footer>
 
 
+{{!-- {{I would really prefer this as a component too but I'm not sure how to get the data in the component}} --}}
+
 {{#if (not-eq currentRouteName 'index')}}
-    <div class="collections">
+<div class="collections">
         <div class="container">
             <h3>Recipe collections</h3>
 
-            <ul>
-                {{#each categories as |category|}}
-                    <li>{{category.name}}</li>
-                {{/each}}
-
-                <li>Breads</li>
-                <li>Catalan</li>
-                <li>Fish</li>
-                <li>French</li>
-                <li>Healthy</li>
-                <li>Italian</li>
-                <li>Japanese</li>
-                <li>Low carb</li>
-                <li>Meat</li>
-                <li>Nut-free</li>
-                <li>Pastry</li>
-                <li>Vegan</li>
-                <li>Vegetarian</li>
-            </ul>
+            {{#promoted-filter filter=(action 'recipeTags')as |tagList|}}
+                    <ul class="flex-container wrap grid-25">
+                        {{#each tagList as |tag|}}
+                            <li class="flex-item">
+                                {{#link-to 'categories.category' tag.id}}
+                                    {{tag.name}}
+                                {{/link-to}}
+                            </li>
+                        {{/each}}
+                    </ul>
+            {{/promoted-filter}}
         </div>
     </div>
 {{/if}}
+
+
 
 
     <div class="subscribe">

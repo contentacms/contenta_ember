@@ -373,12 +373,6 @@ ul.tags {
 }
 
 .collections ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   font-family: $roboto;
 
   li {
@@ -410,7 +404,7 @@ ul.tags {
   justify-content: space-between;
 }
 
-.collections,
+
 .footer {
   background: $grey-light;
 }
