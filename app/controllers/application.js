@@ -35,6 +35,23 @@ export default Ember.Controller.extend({
           limit: 4
         }
       });
+    },
+
+    recipeTags(param) {
+      if (param !== '') {
+        return this.get('store').query('tag', {
+          tags: param,
+          page: {
+            limit: 12
+          }
+        });
+      } else {
+        return this.get('store').query('tag', {
+          page: {
+            limit: 12,
+          }
+        });
+      }
     }
   }
 
