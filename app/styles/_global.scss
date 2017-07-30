@@ -1,6 +1,7 @@
 @import 'variables';
 
 
+
 .shelf {
   background: $grey-light;
   width: 100%;
@@ -97,212 +98,6 @@ header {
   background: $grey-light;
 }
 
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  border: 1px dotted grey;
-  display: flex;
-  justify-content: space-around;
-  justify-content: space-between;
-  justify-content: flex-start;
-}
-
-.wrap    {
-  flex-wrap: wrap;
-}
-
-.flex-item {
-  background: tomato;
-  padding: 1rem;
-  width: 100%;
-  color: white;
-  text-align: left;
-  border: 1px solid grey;
-}
-
-.grid-50 .flex-item {
-  background: SANDYBROWN;
-}
-
-.grid-50-0 .flex-item {
-  background: salmon;
-}
-
-.grid-0-50 .flex-item {
-  background: LIGHTPINK;
-}
-
-.grid-25 .flex-item {
-  background: LIMEGREEN;
-}
-
-.grid-25.double .flex-item:first-child {
-  background: BURLYWOOD;
-}
-
-.grid-33 .flex-item {
-  background: LIGHTBLUE;
-}
-
-.grid-33.double .flex-item:first-child {
-  background: ROSYBROWN;
-}
-
-.grid-100 .flex-item {
-  background: CHOCOLATE;
-  width: 100%;
-  text-align: center;
-}
-
-
-
-
-
-
-
-.mat-card {
-  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
-  display: block;
-  position: relative;
-  padding: 24px;
-  border-radius: 2px;
-  background: #fff;
-  color: rgba(0, 0, 0, .87);
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-
-}
-
-.mat-card-content > :first-child,
-.mat-card > :first-child {
-  margin-top: 0;
-}
-
-.mat-card .card-image {
-  max-height: 200px;
-  overflow: hidden;
-  margin-top: -24px;
-  margin-right: -24px;
-  margin-left: -24px;
-  margin-bottom: 1rem;
-}
-
-.mat-card-image {
-  width: calc(100% + 48px);
-  margin: 0 -24px 16px -24px;
-}
-
-.mat-card-image:first-child {
-  margin-top: -24px;
-}
-
-.mat-card-actions, .mat-card-content, .mat-card-subtitle, .mat-card-title {
-  display: block;
-  margin-bottom: 16px;
-}
-
-.mat-card-content, .mat-card-header .mat-card-title, .mat-card-subtitle {
-  font-size: 14px;
-}
-
-.title a {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.card-title {
-  min-height: 3rem;
-}
-.mat-card-subtitle {
-  color: rgba(0, 0, 0, .54);
-}
-
-.mat-chip:not(.mat-basic-chip) {
-  display: inline-block;
-  padding: 8px 12px 8px 12px;
-  border-radius: 24px;
-}
-.mat-chip:not(.mat-basic-chip) {
-  background-color: #e0e0e0;
-  color: rgba(0, 0, 0, .87);
-}
-.mat-chip:not(.mat-basic-chip) {
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.subtitle > div {
-  margin-top: 10px;
-}
-
-.subtitle-icon {
-  height: 20px;
-  width: 20px;
-  vertical-align: bottom;
-}
-.mat-icon.mat-primary {
-  color: $orange;
-}
-.mat-icon {
-  background-repeat: no-repeat;
-  display: inline-block;
-  color: $orange;
-  height: 24px;
-  width: 24px;
-}
-
-.mat-card .actions {
-  //padding-left: 15px;
-  padding-bottom: 15px;
-}
-
-.mat-card > .mat-card-actions:last-child {
-  margin-bottom: -16px;
-}
-
-.mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.mat-card-actions .mat-button, .mat-card-actions .mat-raised-button {
-  margin: 0 4px;
-}
-
-.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-  background-color: $orange;
-}
-
-.mat-fab.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
-  color: $white;
-}
-
-
-.mat-button, .mat-fab, .mat-icon-button, .mat-mini-fab, .mat-raised-button,
-.cta {
-  box-sizing: border-box;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  outline: 0;
-  border: none;
-  -webkit-tap-highlight-color: transparent;
-  display: inline-block;
-  white-space: nowrap;
-  text-decoration: none;
-  vertical-align: baseline;
-  text-align: center;
-  margin: 0;
-  min-width: 88px;
-  line-height: 36px;
-  padding: 0 16px;
-  border-radius: 2px;
-}
-
 
 h1 {
   font-family: $roboto;
@@ -332,8 +127,6 @@ h4 {
   margin: 1rem 0 2rem;
 }
 
-
-
 .category {
   margin: 0;
   text-align: right;
@@ -358,9 +151,6 @@ ul.tags {
 
 }
 
-.card-image {
-  position: relative;
-}
 
 .is-promoted {
   display: block;
@@ -376,8 +166,6 @@ ul.tags {
   font-family: $roboto;
 
   li {
-    width: 50%;
-    flex-grow: 1;
     padding: 0 0 1rem;
   }
 
@@ -394,14 +182,6 @@ ul.tags {
 
 .themes {
   padding: 1rem 0 2rem;
-}
-
-// this gives children divs flexbox
-.footer .container,
-.subscribe .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 
@@ -433,15 +213,15 @@ ul.tags {
 
 
 .page-title h1 {
-  margin: 0;
+  margin: 0 0 2rem;
 }
 
-.recipe-specs .flex-item {
+.recipe-specs .grid-item {
   text-align: center;
   padding: 1rem 0;
 
   svg {
-    fill: $white;
+    fill: $grey-dark;
     width: 32px;
     height: 32px;
   }

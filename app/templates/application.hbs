@@ -38,9 +38,9 @@
     <h2>Recipes</h2>
     <h3>with some text</h3>
     {{#promoted-filter filter=(action 'featureRecipes')as |promotedList|}}
-        <ul class="flex-container wrap grid-50">
+        <ul class="grid grid-50">
             {{#each promotedList as |recipe|}}
-                <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
             {{/each}}
         </ul>
     {{/promoted-filter}}
@@ -61,9 +61,9 @@
             <h3>Recipe collections</h3>
 
             {{#promoted-filter filter=(action 'recipeTags')as |tagList|}}
-                    <ul class="flex-container wrap grid-25">
+                    <ul class="grid grid-25">
                         {{#each tagList as |tag|}}
-                            <li class="flex-item">
+                            <li class="grid-item">
                                 {{#link-to 'categories.category' tag.id}}
                                     {{tag.name}}
                                 {{/link-to}}
@@ -80,23 +80,27 @@
 
     <div class="subscribe">
         <div class="container">
-            <div class="block">
-                <h3>Umami magazine</h3>
-                <p>Blurb to sign up to newsletter</p>
-            </div>
-            <div class="block">
-                <h4>Get in touch about the Drupal Umami theme</h4>
+            <div class="grid grid-33 grid-double">
+                <div class="grid-item">
+                    <h3>Umami magazine</h3>
+                    <p>Blurb to sign up to newsletter</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Get in touch about the Drupal Umami theme</h4>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-            <div class="block">
-                <p>Umami Magazine & Umami Publications is a fictional magazine and publisher for illustrative purposes only</p>
-            </div>
-            <div class="block">
-                <p>2017 Terms & Conditions</p>
+            <div class="grid grid-33 grid-double">
+                <div class="grid-item">
+                    <p>Umami Magazine & Umami Publications is a fictional magazine and publisher for illustrative purposes only</p>
+                </div>
+                <div class="grid-item">
+                    <p>2017 Terms & Conditions</p>
+                </div>
             </div>
         </div>
     </div>

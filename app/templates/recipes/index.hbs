@@ -3,9 +3,9 @@
 
         <h2>Main Course</h2>
         {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
-            <ul class="flex-container wrap grid-33">
+            <ul class="grid grid-33">
                 {{#each recipeList as |recipe|}}
-                    <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                    <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
                 {{/each}}
             </ul>
         {{/list-filter}}
@@ -13,9 +13,9 @@
 
         <h2>Starters</h2>
         {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
-        <ul class="flex-container wrap grid-25">
+        <ul class="grid grid-25">
             {{#each recipeList as |recipe|}}
-                <li class="flex-item">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
             {{/each}}
         </ul>
         {{/list-filter}}

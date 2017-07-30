@@ -1,9 +1,14 @@
 @import 'normalize';
 @import 'global';
+@import 'grid';
+@import 'flexbox';
+@import 'card';
 @import 'media';
 
+// the ordering above is not working as I want. I need to import _variables into any partial that depends on it (see global, card). I should be able to import it here first
+
 @mixin container {
-  max-width: 1024px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
 }

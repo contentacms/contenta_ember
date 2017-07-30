@@ -1,18 +1,14 @@
-<div class="mat-card">
-     <div local-class="card-image" class="card-image">
+<div local-class="card-image" class="card-image">
 
     {{#if (eq recipe.isPromoted true)}}
         <span class="is-promoted">Promoted</span>
     {{/if}}
 
-         <img class="mat-card-image" src="{{recipe.image.thumbnail.url}}" alt="{{recipe.imageFile.url}}">
-     </div>
+     <img src="{{recipe.image.thumbnail.url}}" alt="{{recipe.imageFile.url}}">
+</div>
 
-     <div class="mat-card-content">
-         <div class="card-title mat-card-title">
-           <h3 class="title">
-                {{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}
-            </h3>
-         </div>
-    </div>
+<div class="card-content">
+ <h3 class="card-title mat-card-title">
+    {{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}
+</h3>
 </div>

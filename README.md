@@ -1,5 +1,13 @@
 # Contenta – Ember Frontend
 
+
+This branch is using CSS Grids for most of the layout
+https://css-tricks.com/snippets/css/complete-guide-grid
+https://gridbyexample.com/examples
+
+
+See below for Content Ember App README contents:
+
 This README outlines the details of collaborating on this Ember application.
 
 

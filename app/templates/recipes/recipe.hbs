@@ -1,235 +1,109 @@
 <div class="wrapper recipe">
 
-    <div class="container flex-container wrap grid-33 double">
+    <div class="container">
 
-      <div class="flex-item page-title">
-          <h1>{{recipe.title}}</h1>
-      </div>
+        <div class="grid grid-50">
 
-      <div class="flex-item">
-        <p class="category">{{recipe.category.name}}</p>
-        <ul class="tags">
-            {{#each recipe.tags as |tag|}}
-                <li>{{tag.name}}</li>
-            {{/each}}
-        </ul>
-      </div>
+          <div class="grid-item page-title">
+              <h1>{{recipe.title}}</h1>
+          </div>
 
-    </div>
-
-
-    <div class="flex-container wrap grid-50">
-
-      <div class="flex-item recipe-image">
-        {{#if (eq recipe.isPromoted true)}}
-            <span class="is-promoted">Author's Choice</span>
-        {{/if}}
-          <img src="{{recipe.image.imageFile.url}}" alt="{{recipe.imageFile.url}}">
-      </div>
-
-      <div class="flex-item recipe-specs">
-        <ul class="flex-container wrap grid-50">
-            <li class="flex-item">
-
-            <svg height="100%" viewBox="0 0 24 24" width="100%" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path>
-            </svg>
-                <p><strong>Preparation Time:</strong> {{recipe.preparationTime}} minutes</p>
-            </li>
-            <li class="flex-item">
-
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
-            <path d="M10.293 11.707l-3.293-3.293v-4.414h2v3.586l2.707 2.707zM8 0c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zM8 14c-3.314 0-6-2.686-6-6s2.686-6 6-6c3.314 0 6 2.686 6 6s-2.686 6-6 6z"></path>
-            </svg>
-                <p><strong>Cooking Time:</strong> {{recipe.totalTime}} minutes</p>
-            </li>
-            <li class="flex-item">
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            	 viewBox="0 0 489.773 489.773" style="enable-background:new 0 0 489.773 489.773;" xml:space="preserve">
-            <g id="XMLID_95_">
-            	<path id="XMLID_98_" d="M155.183,305.646c-2.081,0.175-4.157,0.265-6.238,0.265c-5.693,0-11.23-0.826-16.652-2.081L6.834,429.293
-            		c-6.158,6.149-6.158,16.137,0,22.287l32.47,32.478c6.158,6.15,16.135,6.15,22.276,0l150.785-150.757l-27.944-30.15L155.183,305.646
-            		z"/>
-            	<path id="XMLID_97_" d="M485.345,104.649c-5.888-5.885-15.417-5.885-21.304,0l-81.303,81.301c-7.693,7.685-20.154,7.685-27.847,0
-            		c-7.659-7.679-7.659-20.13,0-27.807l80.901-80.884c6.112-6.118,6.112-16.036,0-22.168c-6.141-6.11-16.055-6.11-22.167,0
-            		l-80.868,80.876c-7.693,7.693-20.14,7.693-27.833,0c-7.677-7.676-7.677-20.136,0-27.806l81.286-81.293
-            		c5.904-5.894,5.904-15.441,0-21.343c-5.888-5.895-15.434-5.895-21.338,0l-91.458,91.463
-            		c-21.989,22.003-28.935,52.888-21.816,80.991l61.31,61.314c28.101,7.093,59.001,0.144,80.965-21.841l91.471-91.458
-            		C491.249,120.1,491.249,110.543,485.345,104.649z"/>
-            	<path id="XMLID_96_" d="M41.093,13.791c-3.134-3.135-7.372-4.854-11.724-4.854c-0.926,0-1.857,0.079-2.766,0.231
-            		c-5.295,0.896-9.838,4.295-12.172,9.133c-26.79,55.373-15.594,121.631,27.894,165.121l77.801,77.791
-            		c7.676,7.685,18.055,11.939,28.819,11.939c1.151,0,2.305-0.048,3.456-0.143l45.171-3.855l196.971,212.489
-            		c3.058,3.303,7.342,5.221,11.855,5.31c0.093,0,0.19,0,0.288,0c4.412,0,8.636-1.743,11.771-4.855l33.734-33.741
-            		c3.117-3.11,4.859-7.331,4.859-11.73c0-4.398-1.742-8.622-4.846-11.732L41.093,13.791z"/>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            </svg>
-                <p><strong>Serves:</strong> {{recipe.numberOfServices}}</p>
-            </li>
-            <li class="flex-item">
-
-            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            	 viewBox="0 0 35.933 35.933" style="enable-background:new 0 0 35.933 35.933;" xml:space="preserve">
-            <g>
-            	<path d="M29.646,10.461c-3.14-2.693-7.215-4.331-11.682-4.331C8.043,6.13,0,14.173,0,24.099c0,0.266,0.026,2.75,0.038,3.015v2.69
-            		H35.86V27.31l0.034-0.196c0.011-0.266,0.039-2.749,0.039-3.015C35.934,15.291,29.646,10.461,29.646,10.461z M4.37,27.114
-            		c-0.015-0.164,0.006-2.549-0.005-2.713H8.05v-1.19H4.624c0-0.014-0.259,0.002-0.259,0.002c0.145-3.085,1.32-6.163,3.539-8.59
-            		l0.093-0.1l0.166,0.144l2.452,2.454l0.77-0.772L8.78,13.746c2.358-2.156,5.35-3.393,8.542-3.535l0.185-0.001
-            		c0,0,0.077-0.003,0.072,0.046v3.634h0.981v-3.679c0.484,0.02,0.968,0.077,1.445,0.152c2.741,0.362,5.289,1.545,7.352,3.43
-            		l-2.6,2.602l0.723,0.726l2.497-2.498l0.138-0.111l0.118,0.156c2.159,2.36,3.394,5.35,3.539,8.543h-3.681v1.19l3.698-0.005
-            		c0,0,0.003,2.561-0.01,2.709L4.37,27.114z M22.8,18.528c0,0-5.844,1.792-6.963,2.909c-1.121,1.122-1.121,2.935,0.002,4.057
-            		c1.117,1.121,2.932,1.121,4.054,0C21.011,24.372,22.8,18.528,22.8,18.528z"/>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            	<g>
-            	</g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            </svg>
-
-
-                <p><strong>Difficulty:</strong> {{recipe.difficulty}}</p>
-            </li>
-        </ul>
-
-        <div class="flex-container grid">
-            <p>{{recipe.texts}}</p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="flex-container wrap grid">
-        <div class="flex-item">
-            <h2>What you'll need and how to make this dish (let's get rid of this headline)</h2>
-        </div>
-    </div>
-
-    <div class="flex-container wrap grid-50">
-
-      <div class="flex-item">
-        <h3>Ingredients</h3>
-            <ul>
-              {{#each recipe.ingredients key="@index" as |ingredient|}}
-                <li>{{ingredient}}</li>
-              {{/each}}
+          <div class="grid-item">
+            <p class="category">{{recipe.category.name}}</p>
+            <ul class="tags">
+                {{#each recipe.tags as |tag|}}
+                    <li>{{tag.name}}</li>
+                {{/each}}
             </ul>
-      </div>
+          </div>
 
-      <div class="flex-item">
-        <h3>Instructions</h3>
-        <p>I{{recipe.instructions}}</p>
-      </div>
-
-    </div>
+        </div>
 
 
-    <div class="flex-container wrap grid">
+        <div class="grid grid-50">
 
-      <div class="flex-item">
+          <div class="grid-item recipe-image">
+            {{#if (eq recipe.isPromoted true)}}
+                <span class="is-promoted">Author's Choice</span>
+            {{/if}}
+              <img src="{{recipe.image.imageFile.url}}" alt="{{recipe.imageFile.url}}">
+          </div>
 
-        <h3>Reviews:</h3>
-            <ul>
-              {{#each recipe.reviews as |review|}}
-                <li><b>{{review.subject}}</b>
-                <p>{{review.body}}</p>
+          <div class="grid-item recipe-specs">
+            <ul class="grid grid-50">
+                <li class="grid-item">
+                    {{icon-prep-time}}
+                    <p><strong>Preparation Time:</strong> {{recipe.preparationTime}} minutes</p>
                 </li>
-              {{/each}}
+                <li class="grid-item">
+                    {{icon-cook-time}}
+                    <p><strong>Cooking Time:</strong> {{recipe.totalTime}} minutes</p>
+                </li>
+                <li class="grid-item">
+                    {{icon-serves}}
+                    <p><strong>Serves:</strong> {{recipe.numberOfServices}}</p>
+                </li>
+                <li class="grid-item">
+                    {{icon-difficulty}}
+                    <p><strong>Difficulty:</strong> {{recipe.difficulty}}</p>
+                </li>
             </ul>
 
-      </div>
-    </div>
+            <div class="grid grid-100">
+                <p>{{recipe.texts}}</p>
+            </div>
 
+          </div>
+
+        </div>
+
+        <div class="grid grid-100">
+            <div class="grid-item">
+                <h2>What you'll need and how to make this dish (let's get rid of this headline)</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-50">
+
+          <div class="grid-item">
+            <h3>Ingredients</h3>
+                <ul>
+                  {{#each recipe.ingredients key="@index" as |ingredient|}}
+                    <li>{{ingredient}}</li>
+                  {{/each}}
+                </ul>
+          </div>
+
+          <div class="grid-item">
+            <h3>Instructions</h3>
+            <p>I{{recipe.instructions}}</p>
+          </div>
+
+        </div>
+
+
+        <div class="grid grid-100">
+
+          <div class="grid-item">
+
+            <h3>Reviews:</h3>
+                <ul>
+                  {{#each recipe.reviews as |review|}}
+                    <li><b>{{review.subject}}</b>
+                    <p>{{review.body}}</p>
+                    </li>
+                  {{/each}}
+                </ul>
+
+          </div>
+        </div>
+
+    </div>
 </div>
 
 
-<h2>More recipes</h2>
+<h2>More recipes placeholder</h2>
+
 {{ theme-listing }}
 
 
