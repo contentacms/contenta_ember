@@ -1,19 +1,5 @@
 @media (min-width: $medium) {
 
-
-}
-
-
-@media (min-width: $large) {
-
-  .shelf {
-    padding: 1rem 0;
-  }
-
-  header > h1 {
-    margin: 0;
-  }
-
   header {
 
     .menu {
@@ -33,5 +19,17 @@
   }
 
 
+
+}
+
+@media (min-width: $large) {
+
+  .shelf {
+    padding: 1rem 0;
+  }
+
+  header > h1 {
+    margin: 0;
+  }
 
 }

@@ -5,6 +5,11 @@ This README outlines the details of collaborating on this Ember application.
 This app is to demonstrate the Contentacms, a decoupled drupal distribution. It uses emberjs to consume the data via the json api. 
 It is part of a set of demos (similar to  todos) that can be found here: http://www.contentacms.org/
 
+Sample data source: 
+http://live-contentacms.pantheonsite.io/
+http://live-contentacms.pantheonsite.io/api
+
+
 The wireframes can be found here: https://www.drupal.org/node/2818741#comment-12114776
 
 CSS Grids for most of the layout. Flexbox for header and nav
