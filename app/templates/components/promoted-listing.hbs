@@ -1,25 +1,14 @@
+<div local-class="card-image" class="card-image">
 
-    <div class="wrapper promoted">
-      <div class="container">
-        <ul class="flex-container wrap grid-25 double">
-          <li class="flex-item">
-            <div class="block">
-              <h3>Promoted Item</h3>
-              <p>with some text</p>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="block">
-              <h3>Promoted Item</h3>
-              <p>with some text</p>
-            </div>
-          </li>
-          <li class="flex-item">
-            <div class="block">
-              <h3>Promoted Item</h3>
-              <p>with some text</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+    {{#if (eq recipe.isPromoted true)}}
+        <span class="is-promoted">Promoted</span>
+    {{/if}}
+
+     <img src="{{recipe.image.thumbnail.url}}" alt="{{recipe.imageFile.url}}">
+</div>
+
+<div class="card-content">
+ <h3 class="card-title mat-card-title">
+    {{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}
+</h3>
+</div>
