@@ -8,18 +8,13 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('recipes', function() {
-
     this.route('recipe', {path: '/:recipe_id'});
-
   });
   this.route('features', function() {
     this.route('article'), {path: '/:slug'};
   });
-  this.route('loading');
-  this.route('notfound', {path: '*path'});
   this.route('about');
   this.route('contact');
-
   this.route('categories', function() {
     this.route('category', { path: '/:category_id' });
   });
@@ -30,6 +25,8 @@ Router.map(function() {
     this.route('review', { path: '/:review_id' });
   });
   this.route('login');
+  this.route('loading');
+  this.route('notfound', {path: '*path'});
 });
 
 export default Router;
