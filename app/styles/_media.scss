@@ -1,71 +1,10 @@
 @media (min-width: $medium) {
 
 
-  .footer .block:first-child,
-  .subscribe .block:first-child {
-    max-width: 70%;
-    padding: 0 1rem 0 0;
-  }
-
-  .footer .block:last-child,
-  .subscribe .block:last-child {
-    width: 30%;
-  }
-
-
-  .collections ul li {
-    width: 33%;
-  }
-
-
-
-
-  .grid-50 .flex-item {
-    width: 50%;
-  }
-
-  .grid-50-0 .flex-item {
-    width: 50%;
-  }
-
-  .grid-0-50 {
-    justify-content: flex-end;
-  }
-
-  .grid-0-50 .flex-item {
-    width: 50%;
-  }
-
-  .grid-25 .flex-item {
-    width: 25%;
-  }
-
-  .grid-25.double .flex-item:first-child {
-    width: 50%;
-  }
-
-  .grid-33 .flex-item {
-    width: 33.3333%;
-  }
-
-  .grid-33.double .flex-item:first-child {
-    width: 66.66666%;
-  }
-
-
-
-
-
-
-
 }
 
 
 @media (min-width: $large) {
-
-  .collections ul li {
-    width: 25%;
-  }
 
   .shelf {
     padding: 1rem 0;

@@ -1,0 +1,186 @@
+// visual styles
+
+.grid {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  //border: 1px dotted grey;
+}
+
+.grid-item {
+  text-align: left;
+  //border: 1px solid grey;
+}
+
+.grid-100 .grid-item {
+  text-align: center;
+}
+
+/* uncomment to enable grid colours
+
+.grid-item {
+  background: tomato;
+  border: 1px solid grey;
+}
+
+.grid-50 .grid-item {
+  background: GOLD;
+}
+
+.grid-50.grid-first .grid-item {
+  background: SALMON;
+}
+
+.grid-50.grid-last .grid-item {
+  background: LIGHTPINK;
+}
+
+.grid-25 .grid-item {
+  background: LIMEGREEN;
+}
+
+.grid-25.grid-double .grid-item:first-child {
+  background: BURLYWOOD;
+}
+
+.grid-25.grid-double .grid-item:last-child {
+  background: PALETURQUOISE;
+}
+
+.grid-33 .grid-item {
+  background: LIGHTBLUE;
+}
+
+.grid-33.grid-double .grid-item:first-child {
+  background: ROSYBROWN;
+}
+
+.grid-100 .grid-item {
+  background: CHOCOLATE;
+}
+*/
+
+// layout rules
+
+
+.grid {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr; // this makes all grid items span 100% (mobile-first)
+  grid-template-rows: 1fr; // this makes all grid items span 100% (mobile-first)
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.grid-special {
+  grid-template-columns: auto; // this makes all grid items be only as wide as their content
+  justify-items: start;
+  align-items: start;
+}
+
+
+@media (min-width: 640px) {
+
+  .grid-item {
+    ///justify-self: start;
+  }
+
+  .grid-100 {
+    justify-items: stretch;
+  }
+
+  .grid-100 .grid-item {
+    justify-self: stretch;
+  }
+
+  .grid-50 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-50.grid-last .grid-item {
+    grid-column: 1/3;
+  }
+
+  .grid-50.grid-first .grid-item {
+    grid-column: 1/3;
+  }
+
+  .grid-25 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-25.grid-double .grid-item:first-child {
+    grid-column: 1/3;
+  }
+
+  /* this is going too far, there must be a better way */
+  .grid-25.grid-double.grid-last .grid-item:first-child {
+    grid-column: 1/2;
+  }
+
+  .grid-25.grid-double.grid-last .grid-item:last-child {
+    grid-column: 1/3;
+  }
+
+  .grid-33 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-33.grid-double .grid-item:first-child {
+    grid-column: 1/3;
+  }
+
+  .grid-33.grid-last .grid-item {
+    grid-column: 2/4;
+  }
+
+  .grid-33.grid-first .grid-item {
+    grid-column: 1/2;
+  }
+
+  .grid-33.grid-last.grid-double .grid-item {
+    grid-column: 2/4;
+  }
+
+  .grid-33.grid-first.grid-double .grid-item {
+    grid-column: 1/3;
+  }
+
+}
+
+
+@media (min-width: 960px) {
+
+  .grid-50.grid-last .grid-item {
+    grid-column: 2/3;
+  }
+
+  .grid-50.grid-first .grid-item {
+    grid-column: 1/2;
+  }
+
+  .grid-25 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* this is going too far, there must be a better way */
+  .grid-25.grid-double.grid-last .grid-item:last-child {
+    grid-column: 3/5;
+  }
+
+  .grid-33 {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-33.grid-last .grid-item {
+    grid-column: 3/4;
+  }
+
+}
