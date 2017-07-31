@@ -11,7 +11,9 @@ export default Ember.Controller.extend({
         filterByCategory(param) {
             if (param !== '') {
                return this.get('store').query('recipe', {
-
+                   filter: {
+                       'category.name': { value: param}
+                   },
                    page: {
                        limit: 4,
                    }
@@ -20,7 +22,9 @@ export default Ember.Controller.extend({
             //    return this.get('store').findAll('recipe');
             } else {
                 return this.get('store').query('recipe', {
-
+                    filter: {
+                        'category.name': { value: param}
+                    },
                     page: {
                         limit: 4,
                     }
