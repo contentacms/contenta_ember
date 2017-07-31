@@ -2,7 +2,7 @@
     <div class="container">
 
         <h2>Main Course</h2>
-        {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
+        {{#list-filter filter=(action 'filterByCategory' 'Main course') as |recipeList|}}
             <ul class="grid grid-33">
                 {{#each recipeList as |recipe|}}
                     <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
@@ -12,7 +12,7 @@
 
 
         <h2>Starters</h2>
-        {{#list-filter filter=(action 'filterByCategory')as |recipeList|}}
+        {{#list-filter filter=(action 'filterByCategory' 'starter') as |recipeList|}}
         <ul class="grid grid-25">
             {{#each recipeList as |recipe|}}
                 <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
