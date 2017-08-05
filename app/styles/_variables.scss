@@ -1,0 +1,29 @@
+@import url('//fonts.googleapis.com/css?family=Roboto+Slab');
+
+$roboto: 'Roboto Slab', serif;
+
+$orange: #E64A19;
+$white: #FFFFFF;
+$black: #010101;
+
+$grey-bg: #FCFBF7;
+$grey-light: #F4F2E9;
+$grey-med: #E5E1D1;
+$grey-dark: #737373;
+
+// breakpoints
+
+$large: 800px;
+$medium: 640px;
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+html * {
+  box-sizing: inherit;
+}
+
+

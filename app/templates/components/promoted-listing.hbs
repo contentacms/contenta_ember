@@ -1,0 +1,15 @@
+<div local-class="card-image" class="card-image">
+     <img src="{{recipe.image.thumbnail.url}}" alt="{{recipe.imageFile.url}}">
+</div>
+
+<div class="card-content">
+
+    {{#if (eq recipe.type recipes)}}
+        <h4 class="is-promoted">Recipe</h4>
+    {{/if}}
+
+     <h3 class="card-title mat-card-title">
+        {{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}
+    </h3>
+
+</div>

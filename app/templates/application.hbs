@@ -1,5 +1,96 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{ shelf-area }}
 
-{{outlet}}
+{{ header-area }}
+
+{{#if (not-eq currentRouteName 'index')}}
+    {{ banner-area }}
+{{/if}}
+
+{{!-- {{this is an awkward way to control where the content area displays for the front page only}} --}}
+{{#if (eq currentRouteName 'index')}}
+    <div class="body">
+        {{outlet}}
+    </div>
+{{/if}}
+
+{{#if (eq currentRouteName 'index') }}
+    {{ highlight-area }}
+    {{ theme-listing }}
+{{/if}}
+
+{{!-- {{this is where the content area displays for all other pages}} --}}
+{{#if (not-eq currentRouteName 'index')}}
+    <div class="body">
+        {{outlet}}
+    </div>
+{{/if}}
+
+{{!-- {{I would really prefer this as a component (see feature-recipes.hbs) but I'm not sure how to get the data in the component}} --}}
+<div class="wrapper full features">
+  <div class="container">
+
+    <h2>Recipes</h2>
+    <h3>with some text</h3>
+    {{#promoted-filter filter=(action 'featureRecipes')as |promotedList|}}
+        <ul class="grid grid-50">
+            {{#each promotedList as |recipe|}}
+                <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+            {{/each}}
+        </ul>
+    {{/promoted-filter}}
+
+  </div>
+</div>
+
+<footer>
+
+{{!-- {{I would really prefer this as a component too but I'm not sure how to get the data in the component}} --}}
+
+{{#if (not-eq currentRouteName 'index')}}
+<div class="collections">
+        <div class="container">
+            <h3>Recipe collections</h3>
+
+            {{#promoted-filter filter=(action 'recipeTags')as |tagList|}}
+                    <ul class="grid grid-25">
+                        {{#each tagList as |tag|}}
+                            <li class="grid-item">
+                                {{#link-to 'categories.category' tag.id}}
+                                    {{tag.name}}
+                                {{/link-to}}
+                            </li>
+                        {{/each}}
+                    </ul>
+            {{/promoted-filter}}
+        </div>
+    </div>
+{{/if}}
+
+    <div class="subscribe">
+        <div class="container">
+            <div class="grid grid-33 grid-double">
+                <div class="grid-item">
+                    <h3>Umami magazine</h3>
+                    <p>Blurb to sign up to newsletter</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Get in touch about the Drupal Umami theme</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="grid grid-33 grid-double">
+                <div class="grid-item">
+                    <p>Umami Magazine & Umami Publications is a fictional magazine and publisher for illustrative purposes only</p>
+                </div>
+                <div class="grid-item">
+                    <p>2017 Terms & Conditions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>

@@ -1,1 +1,19 @@
 {{outlet}}
+
+<div class="wrapper promoted">
+  <div class="container">
+      {{#promoted-filter filter=(action 'filterByPromoted')as |recipeList|}}
+          <ul class="grid grid-25 grid-double">
+              {{#each recipeList as |recipe|}}
+
+                {{#if (eq recipe recipeList.firstObject) }}
+                  <li class="grid-item card">{{promoted-listing-main recipe=recipe}}</li>
+                {{else}}
+                  <li class="grid-item card">{{promoted-listing recipe=recipe}}</li>
+                {{/if}}
+
+              {{/each}}
+          </ul>
+      {{/promoted-filter}}
+  </div>
+</div>

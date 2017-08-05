@@ -1,6 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
+
 /dist
 /tmp
 
@@ -9,6 +10,7 @@
 /bower_components
 
 # misc
+.idea/*
 /.sass-cache
 /connect.lock
 /coverage/*

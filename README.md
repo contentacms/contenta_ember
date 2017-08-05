@@ -2,10 +2,18 @@
 
 This README outlines the details of collaborating on this Ember application.
 
-
 This app is to demonstrate the Contentacms, a decoupled drupal distribution. It uses emberjs to consume the data via the json api. 
 It is part of a set of demos (similar to  todos) that can be found here: http://www.contentacms.org/
 
+Sample data source: 
+http://live-contentacms.pantheonsite.io/
+http://live-contentacms.pantheonsite.io/api
+
+
+The wireframes can be found here: https://www.drupal.org/node/2818741#comment-12114776
+
+CSS Grids for most of the layout. Flexbox for header and nav
+https://gridbyexample.com/examples
 
 
 ## Prerequisites
@@ -53,3 +61,7 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+### Icons
+Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>

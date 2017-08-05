@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="container review">
+        <h2>Reviews</h2>
+        <ul class="grid">
+            {{#each reviews as |review|}}
+            <li class="grid-item">
+                {{review-listing/review-listing review=review}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+{{outlet}}

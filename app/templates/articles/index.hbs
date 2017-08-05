@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="container article">
+        <h2>Articles</h2>
+        <ul class="grid">
+            {{#each articles as |article|}}
+            <li class="grid-item">
+                {{article-listing/article-listing article=article}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+{{outlet}}

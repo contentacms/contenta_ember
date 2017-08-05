@@ -1,0 +1,35 @@
+@media (min-width: $medium) {
+
+  header {
+
+    .menu {
+      padding: 1rem 0;
+    }
+
+    .links {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      a {
+        padding: 0 0 0 1rem;
+      }
+
+    }
+
+  }
+
+
+
+}
+
+@media (min-width: $large) {
+
+  .shelf {
+    padding: 1rem 0;
+  }
+
+  header > h1 {
+    margin: 0;
+  }
+
+}

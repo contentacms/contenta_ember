@@ -1,49 +1,110 @@
-<!-- This is just an example of the api output, for ease of development. The recipe should be built with components.-->
+<div class="wrapper recipe">
 
-<div class="container">
-  <div class="recipe">
-    <div class="content">
-      <div class="title text-center">
-        <h1>{{recipe.title}}</h1>
-        <p>Created: {{recipe.createdAt}}</p>
-        <p>Updated: {{recipe.updatedAt}}</p>
-        <p>Promoted: {{recipe.isPromoted}}</p>
-        <p>Published: {{recipe.isPublished}}</p>
-        <p>Path: {{recipe.path}}</p>
-        <p>Difficulty: {{recipe.difficulty}}</p>
-        <p>Ingredients:
-          <ul>
-            {{#each recipe.ingredients key="@index" as |ingredient|}}
-              <li>{{ingredient}}</li>
-            {{/each}}
-          </ul>
-        </p>
-        <p>Instructions: {{recipe.instructions}}</p>
-        <p>id: {{recipe.internalId}}</p>
-        <p>Number Of Services: {{recipe.numberOfServices}}</p>
-        <p>Preparation Time: {{recipe.preparationTime}}</p>
-        <p>Total Time: {{recipe.totalTime}}</p>
-        <p>Category: {{recipe.category.name}}</p>
-        <p>Image: {{recipe.image.imageFile.url}}</p>
-        <p>Thumbnail: {{recipe.image.thumbnail.url}}</p>
-        <p>Reviews:
-        <ul>
-          {{#each recipe.reviews as |review|}}
-            <li><b>{{review.subject}}</b>
-            <p>{{review.body}}</p>
-            </li>
-          {{/each}}
-        </ul></p>
-        <p>Tags: <br>
-          <ul>
-            {{#each recipe.tags as |tag|}}
-              <li>{{tag.name}}</li>
-            {{/each}}
-          </ul>
-          </p>
-      </div>
+    <div class="container">
+
+        <div class="grid grid-50">
+
+          <div class="grid-item page-title">
+              <h1>{{recipe.title}}</h1>
+          </div>
+
+          <div class="grid-item">
+            <p class="category">{{recipe.category.name}}</p>
+            <ul class="tags">
+                {{#each recipe.tags as |tag|}}
+                    <li>{{tag.name}}</li>
+                {{/each}}
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="grid grid-50">
+
+          <div class="grid-item recipe-image">
+            {{#if (eq recipe.isPromoted true)}}
+                <span class="is-promoted">Author's Choice</span>
+            {{/if}}
+              <img src="{{recipe.image.imageFile.url}}" alt="{{recipe.imageFile.url}}">
+          </div>
+
+          <div class="grid-item recipe-specs">
+            <ul class="grid grid-50">
+                <li class="grid-item">
+                    {{icon-prep-time}}
+                    <p><strong>Preparation Time:</strong> {{recipe.preparationTime}} minutes</p>
+                </li>
+                <li class="grid-item">
+                    {{icon-cook-time}}
+                    <p><strong>Cooking Time:</strong> {{recipe.totalTime}} minutes</p>
+                </li>
+                <li class="grid-item">
+                    {{icon-serves}}
+                    <p><strong>Serves:</strong> {{recipe.numberOfServices}}</p>
+                </li>
+                <li class="grid-item">
+                    {{icon-difficulty}}
+                    <p><strong>Difficulty:</strong> {{recipe.difficulty}}</p>
+                </li>
+            </ul>
+
+            <div class="grid grid-100">
+                <p>{{recipe.texts}}</p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="grid grid-100">
+            <div class="grid-item">
+                <h2>What you'll need and how to make this dish (let's get rid of this headline)</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-50">
+
+          <div class="grid-item">
+            <h3>Ingredients</h3>
+                <ul>
+                  {{#each recipe.ingredients key="@index" as |ingredient|}}
+                    <li>{{ingredient}}</li>
+                  {{/each}}
+                </ul>
+          </div>
+
+          <div class="grid-item">
+            <h3>Instructions</h3>
+            <p>I{{recipe.instructions}}</p>
+          </div>
+
+        </div>
+
+        <div class="grid grid-100">
+
+          <div class="grid-item">
+
+            <h3>Reviews:</h3>
+                <ul>
+                  {{#each recipe.reviews as |review|}}
+                    <li><b>{{review.subject}}</b>
+                    <p>{{review.body}}</p>
+                    </li>
+                  {{/each}}
+                </ul>
+
+          </div>
+        </div>
+
     </div>
-  </div>
+
+    <div class="container">
+        <h2>More recipes placeholder</h2>
+    </div>
+
 </div>
+
+{{ theme-listing }}
+
 
 {{outlet}}

@@ -1,0 +1,229 @@
+@import 'variables';
+
+
+
+.shelf {
+  background: $grey-light;
+  width: 100%;
+  padding: 1rem 0;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .login {
+    font-size: 18px;
+    font-family: $roboto;
+  }
+
+  .search {
+    svg {
+      fill: $black;
+      width: 24px;
+      height: 24px;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+    input {
+      //display: none;
+      padding: 0.25rem 0.5rem;
+      border: 0 none;
+    }
+  }
+}
+
+
+header {
+  background: $white;
+  width: 100%;
+
+  h1 {
+    margin: 0 0 1rem;
+    font-size: 24px;
+    font-weight: 400;
+    color: $black;
+    span {
+      font-size: 16px;
+      text-transform: uppercase;
+      display: block;
+      clear: left;
+    }
+  }
+
+  .menu {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  > a {
+    display: flex;
+  }
+
+  .links {
+    font-size: 18px;
+    display: inherit;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-family: $roboto;
+
+    a {
+      display: block;
+      padding: 0 1rem 1rem 0;
+      color: $black;
+
+      &.active {
+        color: $orange;
+        position: relative;
+        &::after {
+          content: "●";
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+
+  }
+
+}
+
+.body {
+  padding: 1rem 0;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper.full {
+  background: $grey-light;
+}
+
+
+h1 {
+  font-family: $roboto;
+  font-weight: 500;
+}
+
+h2 {
+  color: $grey-dark;
+  font-family: $roboto;
+  font-weight: 500;
+}
+
+h3 {
+  color: $grey-dark;
+  font-family: $roboto;
+  font-weight: 500;
+}
+
+h4 {
+  color: $grey-dark;
+  font-family: $roboto;
+  font-weight: 500;
+}
+
+
+.body {
+  margin: 1rem 0 2rem;
+}
+
+.category {
+  margin: 0;
+  text-align: right;
+}
+
+ul.tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+
+  li {
+    display: inline-block;
+    // coma separated inline list
+    &::after {
+      content: ','
+    }
+    &:last-child::after {
+      content: ''
+    }
+  }
+
+}
+
+
+.collections ul {
+  font-family: $roboto;
+
+  li {
+    padding: 0 0 1rem;
+  }
+
+}
+
+
+.collections,
+.footer,
+.subscribe,
+.features,
+.promoted,
+.themes {
+  padding: 1rem 0 2rem;
+}
+
+
+.footer {
+  background: $grey-light;
+}
+
+.subscribe {
+  background: $grey-med;
+}
+
+.highlight,
+.banner {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  background: $grey-med;
+
+  h3 {
+    font-size: 200%;
+  }
+
+}
+
+
+.features {
+  padding: 2rem 0;
+  background: $grey-bg;
+}
+
+
+.page-title h1 {
+  margin: 0 0 2rem;
+}
+
+.recipe-specs .grid-item {
+  text-align: center;
+  padding: 1rem 0;
+
+  svg {
+    fill: $grey-dark;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.recipe-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight.full {
+  background: $grey-light url(/assets/images/open-book-outline.svg) 8% 15% no-repeat;
+  background-size: 30%;
+}

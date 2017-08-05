@@ -1,0 +1,20 @@
+{{#if category}}
+         <div class="mat-card">
+
+             <div class="mat-card-content">
+                 <div class="card-title mat-card-title">
+                   <h3 class="title">
+                        {{#link-to 'categories.category' category.id}}{{category.name}}{{/link-to}}
+                    </h3>
+                 </div>
+              </div>
+
+               <div class="actions mat-card-actions">
+                   {{#link-to 'categories.category' category.id class='mat-button mat-raised-button mat-primary' aria-disabled='false' tabindex='0'}}
+                   <span class="mat-button-wrapper">View category</span><div class="mat-button-ripple mat-ripple" md-ripple=""></div><div class="mat-button-focus-overlay"></div>
+                   {{/link-to}}
+                </div>
+        </div>
+    {{else}}
+    <p>Sorry, There aren't any categories at this time.</p>
+{{/if}}

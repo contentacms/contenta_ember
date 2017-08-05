@@ -1,0 +1,40 @@
+{{#if recipe}}
+
+<div local-class="card-image" class="card-image">
+
+    {{#if (eq recipe.isPromoted true)}}
+        <span class="is-promoted">Promoted</span>
+    {{/if}}
+
+     <img src="{{recipe.image.thumbnail.url}}" alt="{{recipe.imageFile.url}}">
+
+</div>
+
+<h3 class="card-title">
+    {{#link-to 'recipes.recipe' recipe.id}}{{recipe.title}}{{/link-to}}
+</h3>
+
+<div class="card-content">
+
+    <div class="difficulty">
+        {{icon-difficulty}} <span>{{recipe.difficulty}}</span>
+    </div>
+
+    <div class="prep-time">
+        {{icon-prep-time}} <span>{{recipe.preparationTime}} min</span>
+    </div>
+
+
+    {{#link-to 'recipes.recipe' recipe.id class='button' aria-disabled='false' tabindex='0'}}Read full recipe{{/link-to}}
+
+
+</div>
+
+
+
+
+    {{else}}
+
+    <p>Sorry, There aren't any recipes at this time.</p>
+
+{{/if}}
