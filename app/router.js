@@ -18,6 +18,9 @@ Router.map(function() {
   this.route('categories', function() {
     this.route('category', { path: '/:category_id' });
   });
+  this.route('themes', function() {
+    this.route('theme', { path: '/:theme_id' });
+  });
   this.route('articles', function() {
     this.route('article', { path: '/:article_id' });
   });
@@ -27,6 +30,7 @@ Router.map(function() {
   this.route('login');
   this.route('loading');
   this.route('notfound', {path: '*path'});
+  this.route('theme');
 });
 
 export default Router;

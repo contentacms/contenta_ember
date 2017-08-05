@@ -15,7 +15,24 @@
 
 {{#if (eq currentRouteName 'index') }}
     {{ highlight-area }}
-    {{ theme-listing }}
+
+{{!-- {{I would really prefer this as a component (see theme-listing.hbs) but I'm not sure how to get the data in the component}} --}}
+    <div class="wrapper themes">
+      <div class="container">
+            {{#promoted-filter filter=(action 'recipeThemes')as |themeList|}}
+                    <ul class="grid grid-25">
+                        {{#each themeList as |theme|}}
+                            <li class="grid-item">
+                                {{#link-to 'themes.theme' theme.id}}
+                                    <h3>{{theme.name}}</h3>
+                                    <p>{{theme.description.value}}</p>
+                                {{/link-to}}
+                            </li>
+                        {{/each}}
+                    </ul>
+            {{/promoted-filter}}
+      </div>
+    </div>
 {{/if}}
 
 {{!-- {{this is where the content area displays for all other pages}} --}}
