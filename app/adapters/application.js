@@ -3,7 +3,5 @@ import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend({
   host: ENV.host,
-  namespace: ENV.namespace,
-
-  //test
+  namespace: ENV.namespace
 });
