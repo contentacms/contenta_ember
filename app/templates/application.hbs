@@ -19,18 +19,16 @@
 {{!-- {{I would really prefer this as a component (see theme-listing.hbs) but I'm not sure how to get the data in the component}} --}}
     <div class="wrapper themes">
       <div class="container">
-                  <ul class="grid grid-25">
 
+                  <ul class="grid grid-25">
 
                       <li class="grid-item">
                           <div class="block">
-                              <h2>Theme One</h2>
+                              <h2>Dinners to impress</h2>
                               {{#list-filter filter=(action 'getThemeOne' ) as |recipeList|}}
                                 <ul class="grid grid-25">
                                       {{#each recipeList as |recipe|}}
-                                          <h3>x {{recipe.title}} x </h3>
-                                          <p>{{recipe.description.value}}</p>
-                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                          <li class="grid-item card">{{theme-listing/theme-listing recipe=recipe}}</li>
                                       {{/each}}
                                   </ul>
                               {{/list-filter}}
@@ -39,13 +37,11 @@
 
                       <li class="grid-item">
                           <div class="block">
-                              <h2>Theme Two</h2>
+                              <h2>Learn to cook</h2>
                               {{#list-filter filter=(action 'getThemeTwo' ) as |recipeList|}}
                                   <ul class="grid grid-25">
                                       {{#each recipeList as |recipe|}}
-                                          <h3>x {{recipe.title}} x </h3>
-                                          <p>{{recipe.description.value}}</p>
-                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                          <li class="grid-item card">{{theme-listing/theme-listing recipe=recipe}}</li>
                                       {{/each}}
                                   </ul>
                               {{/list-filter}}
@@ -54,13 +50,11 @@
 
                       <li class="grid-item">
                           <div class="block">
-                              <h2>Theme Three</h2>
+                              <h2>Baked up</h2>
                               {{#list-filter filter=(action 'getThemeThree' ) as |recipeList|}}
                                   <ul class="grid grid-25">
                                       {{#each recipeList as |recipe|}}
-                                          <h3>x {{recipe.title}} x </h3>
-                                          <p>{{recipe.description.value}}</p>
-                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                          <li class="grid-item card">{{theme-listing/theme-listing recipe=recipe}}</li>
                                       {{/each}}
                                   </ul>
                               {{/list-filter}}
@@ -69,13 +63,11 @@
 
                       <li class="grid-item">
                           <div class="block">
-                              <h2>Theme Four</h2>
+                              <h2>Quick and easy</h2>
                               {{#list-filter filter=(action 'getThemeFour' ) as |recipeList|}}
                                   <ul class="grid grid-25">
                                       {{#each recipeList as |recipe|}}
-                                          <h3>x {{recipe.title}} x </h3>
-                                          <p>{{recipe.description.value}}</p>
-                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                          <li class="grid-item card">{{theme-listing/theme-listing recipe=recipe}}</li>
                                       {{/each}}
                                   </ul>
                               {{/list-filter}}
