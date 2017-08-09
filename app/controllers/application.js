@@ -52,6 +52,23 @@ export default Ember.Controller.extend({
           }
         });
       }
+    },
+
+    recipeThemes(param) {
+      if (param !== '') {
+        return this.get('store').query('theme', {
+          themes: param,
+          page: {
+            limit: 12
+          }
+        });
+      } else {
+        return this.get('store').query('theme', {
+          themes: {
+            limit: 12,
+          }
+        });
+      }
     }
   }
 

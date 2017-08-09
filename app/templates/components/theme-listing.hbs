@@ -3,26 +3,20 @@
     <ul class="grid grid-25">
       <li class="grid-item">
         <div class="block">
-          <h3>Theme Title</h3>
-          <p>with some text</p>
-        </div>
-      </li>
-      <li class="grid-item">
-        <div class="block">
-          <h3>Theme Title</h3>
-          <p>with some text</p>
-        </div>
-      </li>
-      <li class="grid-item">
-        <div class="block">
-          <h3>Theme Title</h3>
-          <p>with some text</p>
-        </div>
-      </li>
-      <li class="grid-item">
-        <div class="block">
-          <h3>Theme Title</h3>
-          <p>with some text</p>
+
+            {{#promoted-filter filter=(action 'recipeThemes')as |themeList|}}
+                    <ul class="grid grid-25">
+                        {{#each themeList as |theme|}}
+                            <li class="grid-item">
+                                {{#link-to 'themes.theme' theme.id}}
+                                    <h3>{{theme.name}}</h3>
+                                    <p>{{theme.description.value}}</p>
+                                {{/link-to}}
+                            </li>
+                        {{/each}}
+                    </ul>
+            {{/promoted-filter}}
+
         </div>
       </li>
     </ul>
