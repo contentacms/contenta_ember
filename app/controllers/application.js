@@ -1,31 +1,71 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  recipeSort: ['title:asc'],
-  sortedRecipes:Ember.computed.sort('model.recipe', 'recipeSort'),
-  firstTenRecipes: Ember.computed.filter('sortedRecipes', function(recipe, index) {
-    return (index < 10);
-  }),
 
   actions: {
     filterByPromoted(param) {
       if (param !== '') {
         return this.get('store').query('recipe', {
-
           page: {
             limit: 3,
           }
         });
-        //    return Ember.Controller.firstTenRecipes;
-        //    return this.get('store').findAll('recipe');
       } else {
         return this.get('store').query('recipe', {
-
           page: {
             limit: 3,
           }
         });
       }
+    },
+
+    getThemeOne(){
+      //   Dinners to impress: Filter by category 'Main Dessert': "&filter[category.name][value]=Main course"
+      return this.get('store').query('recipe', {
+        filter: {
+          'category.name': {value: 'Main course'}
+        },
+        page: {
+          limit: 1
+        }
+      });
+    },
+
+    getThemeTwo(){
+        //   Learn to cook: "&filter[difficulty][value]=easy"
+        return this.get('store').query('recipe', {
+          filter: {
+            'difficulty': { value: 'easy'}
+          },
+          page: {
+            limit: 1
+          }
+        });
+    },
+
+    getThemeThree(){
+      //   Baked up: "&filter[category.name][value]=Desert"
+      return this.get('store').query('recipe', {
+        filter: {
+          'category.name': { value: 'Salad'}
+        },
+        page: {
+          limit: 1
+        }
+      });
+    },
+
+    getThemeFour()
+    {
+//   Quick and easy: "&filter[totalTime][condition][path]=totalTime&filter[totalTime][condition][value]=20&filter[totalTime][condition][operator]=<
+      return this.get('store').query('recipe', {
+        filter: {
+          'category.name': { value: 'Snack'}
+        },
+        page: {
+          limit: 1
+        }
+      });
     },
 
     featureRecipes(param) {
@@ -71,5 +111,4 @@ export default Ember.Controller.extend({
       }
     }
   }
-
 });

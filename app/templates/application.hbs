@@ -19,18 +19,71 @@
 {{!-- {{I would really prefer this as a component (see theme-listing.hbs) but I'm not sure how to get the data in the component}} --}}
     <div class="wrapper themes">
       <div class="container">
-            {{#promoted-filter filter=(action 'recipeThemes')as |themeList|}}
-                    <ul class="grid grid-25">
-                        {{#each themeList as |theme|}}
-                            <li class="grid-item">
-                                {{#link-to 'themes.theme' theme.id}}
-                                    <h3>{{theme.name}}</h3>
-                                    <p>{{theme.description.value}}</p>
-                                {{/link-to}}
-                            </li>
-                        {{/each}}
-                    </ul>
-            {{/promoted-filter}}
+                  <ul class="grid grid-25">
+
+
+                      <li class="grid-item">
+                          <div class="block">
+                              <h2>Theme One</h2>
+                              {{#list-filter filter=(action 'getThemeOne' ) as |recipeList|}}
+                                <ul class="grid grid-25">
+                                      {{#each recipeList as |recipe|}}
+                                          <h3>x {{recipe.title}} x </h3>
+                                          <p>{{recipe.description.value}}</p>
+                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                      {{/each}}
+                                  </ul>
+                              {{/list-filter}}
+                          </div>
+                      </li>
+
+                      <li class="grid-item">
+                          <div class="block">
+                              <h2>Theme Two</h2>
+                              {{#list-filter filter=(action 'getThemeTwo' ) as |recipeList|}}
+                                  <ul class="grid grid-25">
+                                      {{#each recipeList as |recipe|}}
+                                          <h3>x {{recipe.title}} x </h3>
+                                          <p>{{recipe.description.value}}</p>
+                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                      {{/each}}
+                                  </ul>
+                              {{/list-filter}}
+                          </div>
+                      </li>
+
+                      <li class="grid-item">
+                          <div class="block">
+                              <h2>Theme Three</h2>
+                              {{#list-filter filter=(action 'getThemeThree' ) as |recipeList|}}
+                                  <ul class="grid grid-25">
+                                      {{#each recipeList as |recipe|}}
+                                          <h3>x {{recipe.title}} x </h3>
+                                          <p>{{recipe.description.value}}</p>
+                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                      {{/each}}
+                                  </ul>
+                              {{/list-filter}}
+                          </div>
+                      </li>
+
+                      <li class="grid-item">
+                          <div class="block">
+                              <h2>Theme Four</h2>
+                              {{#list-filter filter=(action 'getThemeFour' ) as |recipeList|}}
+                                  <ul class="grid grid-25">
+                                      {{#each recipeList as |recipe|}}
+                                          <h3>x {{recipe.title}} x </h3>
+                                          <p>{{recipe.description.value}}</p>
+                                          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                                      {{/each}}
+                                  </ul>
+                              {{/list-filter}}
+                          </div>
+                      </li>
+
+
+                  </ul>
       </div>
     </div>
 {{/if}}
