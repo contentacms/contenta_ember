@@ -20,6 +20,24 @@
         </ul>
         {{/list-filter}}
 
+        <h2>Snacks</h2>
+        {{#list-filter filter=(action 'filterByCategory' 'Snack') as |recipeList|}}
+            <ul class="grid grid-25">
+                {{#each recipeList as |recipe|}}
+                    <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                {{/each}}
+            </ul>
+        {{/list-filter}}
+
+        <h2>Salads</h2>
+        {{#list-filter filter=(action 'filterByCategory' 'Salad') as |recipeList|}}
+            <ul class="grid grid-25">
+                {{#each recipeList as |recipe|}}
+                    <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                {{/each}}
+            </ul>
+        {{/list-filter}}
+
         {{outlet}}
 
     </div>
