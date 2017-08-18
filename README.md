@@ -9,11 +9,13 @@ Sample data source:
 http://live-contentacms.pantheonsite.io/
 http://live-contentacms.pantheonsite.io/api
 
+Implementation guidelines: https://github.com/contentacms/contenta_jsonapi/blob/8.x-1.x/docs/demos-consumers-implementation-guidelines.md
 
 The wireframes can be found here: https://www.drupal.org/node/2818741#comment-12114776
 
 CSS Grids for most of the layout. Flexbox for header and nav
 https://gridbyexample.com/examples
+
 
 
 ## Prerequisites
