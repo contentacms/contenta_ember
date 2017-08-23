@@ -1,0 +1,36 @@
+@import 'variables';
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+  border-radius: $border-radius;
+  border: 0 none;
+}
+
+.btn-green {
+  @include button-bg($green);
+}
+
+.btn-blue {
+  @include button-bg($blue);
+}
+
+.btn-yellow{
+  @include button-bg($yellow);
+}
+
+.btn-red {
+  @include button-bg($red);
+}
