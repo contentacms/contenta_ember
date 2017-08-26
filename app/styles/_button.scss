@@ -1,0 +1,84 @@
+@import 'variables';
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 0.25rem 1rem;
+  border-radius: $border-radius;
+  border: 0 none;
+}
+
+.btn-green {
+  @include button-bg($green);
+}
+
+.btn-blue {
+  @include button-bg($blue);
+}
+
+.btn-yellow{
+  @include button-bg($yellow);
+}
+
+.btn-red {
+  @include button-bg($red);
+}
+
+
+button.btn-svg {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  /* Reset `button` and button-style `input` default styles */
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  // fancy grow effect
+  transition: all 200ms ease-in;
+  transform: scale(1);
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    // fancy grow effect
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+
+  }
+
+  &:focus {
+    border: 0;
+    outline: 0; // is it worth it?
+
+    // fancy grow effect
+    transform: scale(1.5);
+
+  }
+
+
+
+}
