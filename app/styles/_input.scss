@@ -1,0 +1,11 @@
+input {
+  outline-width: 0;
+  outline-style: solid;
+  border-radius: 0;
+  box-shadow: none;
+
+  &:focus {
+    outline-width: 2px;
+  }
+
+}

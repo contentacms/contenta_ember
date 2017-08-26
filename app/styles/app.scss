@@ -1,4 +1,3 @@
-@import 'variables';
 @import 'normalize';
 @import 'global';
 @import 'grid';
@@ -6,6 +5,9 @@
 @import 'card';
 @import 'media';
 @import 'button';
+@import 'button';
+@import 'search';
+@import 'input';
 
 // the ordering above is not working as I want. I need to import _variables into any partial that depends on it (see global, card). I should be able to import it here first
 
@@ -20,6 +22,7 @@
 body {
   font-size: 16px;
 }
+
 
 :global {
 

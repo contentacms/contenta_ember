@@ -1,0 +1,47 @@
+@import 'variables';
+
+.search {
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  .btn-svg {
+
+    svg {
+      fill: $black;
+      transition: 200ms ease-in;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      fill: $green;
+    }
+
+    svg:hover,
+    svg:focus {
+      fill: $green;
+    }
+
+  }
+
+  input {
+    background-color: transparent;
+    border: 0 none;
+    border-bottom: 2px solid transparent;
+    width: 300px;
+    padding: 0.25rem 0.5rem;
+
+    &:hover,
+    &:focus {
+      border-color: $green;
+      outline-color: transparent;
+    }
+
+  }
+
+
+}
