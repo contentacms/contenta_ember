@@ -3,20 +3,20 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 
   // provides variables for the application.hbs to use for conditional components and layout
-  isFreestyleRoute: Ember.computed.equal('currentRouteName', 'freestyle'),
   isIndexRoute: Ember.computed.equal('currentRouteName', 'index'),
+  isRecipesRoute: Ember.computed.equal('currentRouteName', 'recipes.index'),
+  isRecipeRoute: Ember.computed.equal('currentRouteName', 'recipes.recipe'),
+  isFeaturesRoute: Ember.computed.equal('currentRouteName', 'articles.index'),
+  isFeatureRoute: Ember.computed.equal('currentRouteName', 'articles.article'),
+  isContactRoute: Ember.computed.equal('currentRouteName', 'contact'),
+  isFreestyleRoute: Ember.computed.equal('currentRouteName', 'freestyle'),
+  isLoginRoute: Ember.computed.equal('currentRouteName', 'login'),
   // A nicer way would be to have an array where I can list multiple routes
   // And see if it is currentRouteName
   // like:
   //isOneOfRoute: ['login', 'notfound', 'freestyle'].forEach(function(item) {
   //    console.log(item);
   //}),
-  // Instead I am checking the array in the .hbs each loop
-  isOneOfRoute: [
-      'login', 
-      'notfound', 
-      'freestyle'
-  ],
 
   actions: {
 
