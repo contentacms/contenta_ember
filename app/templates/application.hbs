@@ -1,10 +1,43 @@
-{{ shelf-area }}
+{{#unless (or isFreestyleRoute) }}
+    {{ shelf-area }}
+{{/unless}}
 
-{{ header-area }}
 
-{{#if (not-eq currentRouteName 'index')}}
-    {{ banner-area }}
+{{#if (or isFreestyleRoute) }}
+    {{ header-reduced }}
+{{else}}
+    {{ header-area }}
 {{/if}}
+
+<p>
+    currentRouteName: {{ currentRouteName }}<br>
+    Freestyle: {{ isFreestyleRoute }}<br>
+    Index: {{ isIndexRoute }}
+</p>
+
+{{#unless (or isFreestyleRoute isIndexRoute) }}
+    <h2>NO Index/Freestyle layout</h2>
+{{/unless}}
+
+{{#if (or isFreestyleRoute isIndexRoute) }}
+    <h2>YES Index/Freestyle layout</h2>
+{{else}}
+    <h2>NO Index/Freestyle layout</h2>
+{{/if}}
+
+<p>
+    isOneOfRoute Array: {{isOneOfRoute}}<br>
+    {{#each isOneOfRoute as |item|}}
+        {{#if (eq currentRouteName item)}}
+
+        {{/if}}
+    {{/each}}
+</p>
+
+
+{{#unless (or isFreestyleRoute isIndexRoute) }}
+    {{ banner-area }}
+{{/unless}}
 
 {{!-- {{this is an awkward way to control where the content area displays for the front page only}} --}}
 {{#if (eq currentRouteName 'index')}}
@@ -13,12 +46,12 @@
     </div>
 {{/if}}
 
-{{#if (eq currentRouteName 'index') }}
+{{#if (eq currentRouteName 'index' or eq currentRouteName 'recipes.index') }}
     {{ highlight-area }}
 
 {{!-- {{I would really prefer this as a component (see theme-listing.hbs) but I'm not sure how to get the data in the component}} --}}
     <div class="wrapper themes">
-      <div class="container">
+       <div class="container">
           <ul class="grid grid-25">
               <li class="grid-item">
                   <div class="block">
@@ -66,7 +99,7 @@
 {{/if}}
 
 {{!-- {{this is where the content area displays for all other pages}} --}}
-{{#if (not-eq currentRouteName 'index')}}
+{{#if (not-eq currentRouteName 'index' or not-equal currentRouteName 'recipe.index') }}
     <div class="body">
         {{outlet}}
     </div>
