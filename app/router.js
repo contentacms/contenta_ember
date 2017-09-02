@@ -27,6 +27,9 @@ Router.map(function() {
   this.route('login');
   this.route('loading');
   this.route('notfound', {path: '*path'});
+
+  // style guide
+    this.route('freestyle');
 });
 
 export default Router;

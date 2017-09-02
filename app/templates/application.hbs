@@ -1,24 +1,28 @@
-{{ shelf-area }}
+{{#unless (or isFreestyleRoute isLoginRoute) }}
+    {{ shelf-area }}
+{{/unless}}
 
-{{ header-area }}
+{{#if (or isFreestyleRoute isLoginRoute)}}
+        {{ header-reduced }}
+    {{else}}
+        {{ header-area }}
+{{/if}}
 
-{{#if (not-eq currentRouteName 'index')}}
+{{#if (or isFeaturesRoute isRecipesRoute) }}
     {{ banner-area }}
 {{/if}}
 
-{{!-- {{this is an awkward way to control where the content area displays for the front page only}} --}}
-{{#if (eq currentRouteName 'index')}}
+{{!-- the content area displays here for the front page only --}}
+{{#if isIndexRoute}}
     <div class="body">
         {{outlet}}
     </div>
-{{/if}}
 
-{{#if (eq currentRouteName 'index') }}
     {{ highlight-area }}
 
 {{!-- {{I would really prefer this as a component (see theme-listing.hbs) but I'm not sure how to get the data in the component}} --}}
     <div class="wrapper themes">
-      <div class="container">
+       <div class="container">
           <ul class="grid grid-25">
               <li class="grid-item">
                   <div class="block">
@@ -65,13 +69,19 @@
     </div>
 {{/if}}
 
+
+
 {{!-- {{this is where the content area displays for all other pages}} --}}
-{{#if (not-eq currentRouteName 'index')}}
+{{#unless isIndexRoute}}
     <div class="body">
+        here
         {{outlet}}
     </div>
-{{/if}}
+{{/unless}}
 
+
+
+{{#if isIndexRoute}}
 {{!-- {{I would really prefer this as a component (see feature-recipes.hbs) but I'm not sure how to get the data in the component}} --}}
 <div class="wrapper full features">
   <div class="container">
@@ -88,31 +98,39 @@
 
   </div>
 </div>
+{{/if}}
+
 
 <footer>
 
-{{!-- {{I would really prefer this as a component too but I'm not sure how to get the data in the component}} --}}
+    {{!-- {{I would really prefer this as a component too but I'm not sure how to get the data in the component}} --}}
+    {{#if (or isRecipesRoute isRecipeRoute)}}
+    <div class="collections">
+            <div class="container">
+                <h3>Recipe collections</h3>
 
-{{#if (not-eq currentRouteName 'index')}}
-<div class="collections">
-        <div class="container">
-            <h3>Recipe collections</h3>
-
-            {{#promoted-filter filter=(action 'recipeTags')as |tagList|}}
-                    <ul class="grid grid-25">
-                        {{#each tagList as |tag|}}
-                            <li class="grid-item">
-                                {{#link-to 'categories.category' tag.id}}
-                                    {{tag.name}}
-                                {{/link-to}}
-                            </li>
-                        {{/each}}
-                    </ul>
-            {{/promoted-filter}}
+                {{#promoted-filter filter=(action 'recipeTags')as |tagList|}}
+                        <ul class="grid grid-25">
+                            {{#each tagList as |tag|}}
+                                <li class="grid-item">
+                                    {{#link-to 'categories.category' tag.id}}
+                                        {{tag.name}}
+                                    {{/link-to}}
+                                </li>
+                            {{/each}}
+                        </ul>
+                {{/promoted-filter}}
+            </div>
         </div>
-    </div>
-{{/if}}
+    {{/if}}
 
+
+    {{#if (or isFeaturesRoute isFeatureRoute isContactRoute)}}
+        {{ highlight-area }}
+    {{/if}}
+
+
+    {{#unless (or isFreestyleRoute isLoginRoute)}}
     <div class="subscribe">
         <div class="container">
             <div class="grid grid-33 grid-double">
@@ -126,18 +144,8 @@
             </div>
         </div>
     </div>
+    {{/unless}}
 
-    <div class="footer">
-        <div class="container">
-            <div class="grid grid-33 grid-double">
-                <div class="grid-item">
-                    <p>Umami Magazine & Umami Publications is a fictional magazine and publisher for illustrative purposes only</p>
-                </div>
-                <div class="grid-item">
-                    <p>2017 Terms & Conditions</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{footer-area}}
 
 </footer>
