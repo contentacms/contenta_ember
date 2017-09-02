@@ -151,7 +151,6 @@ ul.tags {
 
 }
 
-
 .collections,
 .footer,
 .subscribe,
@@ -161,8 +160,8 @@ ul.tags {
   padding: 1rem 0 2rem;
 }
 
-
-.footer {
+.footer,
+.collections {
   background: $grey-light;
 }
 
@@ -173,7 +172,6 @@ ul.tags {
 .highlight,
 .banner {
   padding: 2rem 0;
-  margin-bottom: 2rem;
   background: $grey-med;
 
   h3 {
@@ -182,6 +180,9 @@ ul.tags {
 
 }
 
+.banner {
+  margin-bottom: 2rem;
+}
 
 .features {
   padding: 2rem 0;
