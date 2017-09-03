@@ -99,7 +99,16 @@
     </div>
 
     <div class="container">
-        <h2>More recipes placeholder</h2>
+        <h2>More recipes (these should be related to current recipe category)</h2>
+
+        {{#list-filter filter=(action 'latestRecipes') as |recipeList|}}
+            <ul class="grid grid-25">
+                {{#each recipeList as |recipe|}}
+                    <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                {{/each}}
+            </ul>
+        {{/list-filter}}
+
     </div>
 
 </div>

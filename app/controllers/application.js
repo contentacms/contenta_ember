@@ -40,7 +40,8 @@ export default Ember.Controller.extend({
       //   Dinners to impress: Filter by category 'Main Dessert': "&filter[category.name][value]=Main course"
       return this.get('store').query('recipe', {
         filter: {
-          'category.name': {value: 'Main course'}
+          'category.name': {value: 'Main course'},
+          'difficulty': {value: 'hard'}
         },
         page: {
           limit: 1
@@ -76,7 +77,10 @@ export default Ember.Controller.extend({
 //   Quick and easy: "&filter[totalTime][condition][path]=totalTime&filter[totalTime][condition][value]=20&filter[totalTime][condition][operator]=<
       return this.get('store').query('recipe', {
         filter: {
-          'category.name': { value: 'Snack'}
+          'category.name': { value: 'Snack'},
+          'preparationTime': { value: '10'},
+          'totalTime': { value: '10'},
+          'difficulty': { value: 'easy'},
         },
         page: {
           limit: 1
@@ -111,6 +115,8 @@ export default Ember.Controller.extend({
         });
       }
     }
+
+
   }
 
 });

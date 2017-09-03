@@ -65,6 +65,48 @@
                   </div>
               </li>
           </ul>
+
+<!-- enable these to see single recipes that conform to the 4 themed filters above
+           <h2>Dinners to Impress</h2>
+           {{#list-filter filter=(action 'getThemeOne' ) as |recipeList|}}
+               <ul class="grid grid-25">
+                   {{#each recipeList as |recipe|}}
+                       <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                   {{/each}}
+               </ul>
+           {{/list-filter}}
+
+
+           <h2>Learn to Cook</h2>
+           {{#list-filter filter=(action 'getThemeTwo' ) as |recipeList|}}
+               <ul class="grid grid-25">
+                   {{#each recipeList as |recipe|}}
+                       <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                   {{/each}}
+               </ul>
+           {{/list-filter}}
+
+
+           <h2>Baked Up</h2>
+           {{#list-filter filter=(action 'getThemeThree' ) as |recipeList|}}
+               <ul class="grid grid-25">
+                   {{#each recipeList as |recipe|}}
+                       <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                   {{/each}}
+               </ul>
+           {{/list-filter}}
+
+
+           <h2>Quick and Easy</h2>
+           {{#list-filter filter=(action 'getThemeFour' ) as |recipeList|}}
+               <ul class="grid grid-25">
+                   {{#each recipeList as |recipe|}}
+                       <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                   {{/each}}
+               </ul>
+           {{/list-filter}}
+-->
+
       </div>
     </div>
 {{/if}}
@@ -74,7 +116,6 @@
 {{!-- {{this is where the content area displays for all other pages}} --}}
 {{#unless isIndexRoute}}
     <div class="body">
-        here
         {{outlet}}
     </div>
 {{/unless}}
