@@ -3,16 +3,10 @@
 
         <h2>Recipe categories</h2>
 
-<p>this should mirror the recipe listing pages, provide the taxonomy terms have images</p>
-
-        <ul>
+        <ul class="grid grid-25">
             {{#each categories as |category|}}
-                <li>{{category.name}}</li>
+                <li class="grid-item card">{{category-listing/category-listing category=category}}</li>
             {{/each}}
-
         </ul>
-
     </div>
 </div>
-
-{{outlet}}
