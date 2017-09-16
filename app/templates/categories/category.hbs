@@ -1,13 +1,26 @@
-<div class="wrapper">
+<div class="wrapper recipe">
+
     <div class="container">
-      <div class="category">
-        <div class="content">
-          <div class="title text-center">
-            <h3>{{category.name}}</h3>
+
+        <div class="grid grid-50">
+
+          <div class="grid-item page-title">
+             <h1>{{category.name}}</h1>
+
+                {{#list-filter filter=(action 'filterByCategory' 'snack') as |recipeList|}}
+                <ul class="grid grid-25">
+                    {{#each recipeList as |recipe|}}
+                        <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+                    {{/each}}
+                </ul>
+                {{/list-filter}}
+
           </div>
+
         </div>
-      </div>
+
     </div>
+
 </div>
 
-{{outlet}}
+{{ theme-listing }}

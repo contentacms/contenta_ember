@@ -11,7 +11,7 @@ Router.map(function() {
     this.route('recipe', {path: '/:recipe_id'});
   });
   this.route('features', function() {
-    this.route('article'), {path: '/:slug'};
+    this.route('article', { path: '/:slug' });
   });
   this.route('about');
   this.route('contact');
@@ -27,6 +27,9 @@ Router.map(function() {
   this.route('login');
   this.route('loading');
   this.route('notfound', {path: '*path'});
+
+  // style guide
+    this.route('freestyle');
 });
 
 export default Router;

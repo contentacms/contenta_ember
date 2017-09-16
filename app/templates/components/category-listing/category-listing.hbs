@@ -1,20 +1,23 @@
 {{#if category}}
-         <div class="mat-card">
 
-             <div class="mat-card-content">
-                 <div class="card-title mat-card-title">
-                   <h3 class="title">
-                        {{#link-to 'categories.category' category.id}}{{category.name}}{{/link-to}}
-                    </h3>
-                 </div>
-              </div>
+<div local-class="card-image" class="card-image">
 
-               <div class="actions mat-card-actions">
-                   {{#link-to 'categories.category' category.id class='mat-button mat-raised-button mat-primary' aria-disabled='false' tabindex='0'}}
-                   <span class="mat-button-wrapper">View category</span><div class="mat-button-ripple mat-ripple" md-ripple=""></div><div class="mat-button-focus-overlay"></div>
-                   {{/link-to}}
-                </div>
-        </div>
+     <img src="{{recipe.image.thumbnail.url}}" alt="{{recipe.imageFile.url}}">
+
+</div>
+
+<h3 class="card-title">
+    {{#link-to 'categories.category' category.id}}{{category.name}}{{/link-to}}
+</h3>
+
+<div class="card-content">
+
+    {{#link-to 'categories.category' category.id class='button' aria-disabled='false' tabindex='0'}}View recipes{{/link-to}}
+
+</div>
+
     {{else}}
+
     <p>Sorry, There aren't any categories at this time.</p>
+
 {{/if}}

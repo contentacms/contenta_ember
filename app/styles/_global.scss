@@ -18,20 +18,6 @@
     font-family: $roboto;
   }
 
-  .search {
-    svg {
-      fill: $black;
-      width: 24px;
-      height: 24px;
-      margin-right: 0.5rem;
-      vertical-align: middle;
-    }
-    input {
-      //display: none;
-      padding: 0.25rem 0.5rem;
-      border: 0 none;
-    }
-  }
 }
 
 
@@ -165,7 +151,6 @@ ul.tags {
 
 }
 
-
 .collections,
 .footer,
 .subscribe,
@@ -175,8 +160,8 @@ ul.tags {
   padding: 1rem 0 2rem;
 }
 
-
-.footer {
+.footer,
+.collections {
   background: $grey-light;
 }
 
@@ -187,7 +172,6 @@ ul.tags {
 .highlight,
 .banner {
   padding: 2rem 0;
-  margin-bottom: 2rem;
   background: $grey-med;
 
   h3 {
@@ -196,6 +180,9 @@ ul.tags {
 
 }
 
+.banner {
+  margin-bottom: 2rem;
+}
 
 .features {
   padding: 2rem 0;
