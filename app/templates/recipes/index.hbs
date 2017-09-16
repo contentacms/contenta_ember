@@ -11,7 +11,7 @@
         {{/list-filter}}
 
         <h2>Starters</h2>
-        {{#list-filter filter=(action 'filterByCategory' 'starter') as |recipeList|}}
+        {{#list-filter filter=(action 'filterByCategory' 'Starter') as |recipeList|}}
         <ul class="grid grid-25">
             {{#each recipeList as |recipe|}}
                 <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>

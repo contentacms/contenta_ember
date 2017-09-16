@@ -7,7 +7,7 @@
           <div class="grid-item page-title">
              <h1>{{category.name}}</h1>
 
-                {{#list-filter filter=(action 'filterByCategory' 'snack') as |recipeList|}}
+                {{#list-filter filter=(action 'filterByCategory' 'Snack') as |recipeList|}}
                 <ul class="grid grid-25">
                     {{#each recipeList as |recipe|}}
                         <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
@@ -23,4 +23,3 @@
 
 </div>
 
-{{ theme-listing }}
