@@ -6,4 +6,5 @@ export default DS.Model.extend({
   path: DS.attr('string'),
   weight: DS.attr(),
   recipe: DS.hasMany('recipe'),
+  category_image: DS.belongsTo('image')
 });
