@@ -1,26 +1,25 @@
 <div class="wrapper category">
-    <div class="container">
+  <div class="container">
 
-        <div class="grid grid-50">
+    <div class="grid grid-50">
 
-          <h2 class="page-title">{{ category.name }}</h2>
+      <h2 class="page-title">{{ category.name }}</h2>
 
-          <div local-class="card-image" class="card-image">
+      <div local-class="card-image" class="card-image">
 
-            <img src="{{category.category_image.thumbnail.url}}" alt="{{category.categoryImageFile.url}}">
+        <img src="{{category.category_image.thumbnail.url}}" alt="{{category.categoryImageFile.url}}">
 
-          </div>
-
-        </div>
-
-        {{#list-filter filter=(action 'filterByCategory' 'Snack') as |recipeList|}}
-        <ul class="grid grid-25">
-            {{#each recipeList as |recipe|}}
-                <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
-            {{/each}}
-        </ul>
-        {{/list-filter}}
+      </div>
 
     </div>
-</div>
 
+    {{#list-filter filter=(action 'filterByCategory' 'Snack') as |recipeList|}}
+      <ul class="grid grid-25">
+        {{#each recipeList as |recipe|}}
+          <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+        {{/each}}
+      </ul>
+    {{/list-filter}}
+
+  </div>
+</div>
