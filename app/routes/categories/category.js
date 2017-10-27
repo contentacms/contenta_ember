@@ -9,9 +9,6 @@ export default Ember.Route.extend({
         sort: "-createdAt",
         page: {
           limit: 30,
-        },
-        filter: {
-          'category.name': {value: 'Starter'}
         }
       }),
     });

@@ -13,12 +13,15 @@
 
     </div>
 
-    {{#list-filter filter=(action 'filterByCategory' 'Snack') as |recipeList|}}
-      <ul class="grid grid-25">
+    {{#list-filter filter=(action 'filterByCategory' category.name) as |recipeList|}}
+
+      <ul class="grid grid-25 test">
         {{#each recipeList as |recipe|}}
+          {{ catgeory.name }}
           <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
         {{/each}}
       </ul>
+
     {{/list-filter}}
 
   </div>
