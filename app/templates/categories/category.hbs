@@ -15,7 +15,7 @@
 
     {{#list-filter filter=(action 'filterByCategory' category.name) as |recipeList|}}
 
-      <ul class="grid grid-25 test">
+      <ul class="grid grid-25">
         {{#each recipeList as |recipe|}}
           {{ catgeory.name }}
           <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>

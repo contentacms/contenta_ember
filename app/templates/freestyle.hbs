@@ -111,6 +111,16 @@
     {{/section.subsection}}
 
 
+
+    {{#section.subsection name='Recipe listing area'}}
+
+      {{#freestyle-usage 'recipe-listing' title='Recipe listing' usageTitle='Usage'}}
+        {{recipe-listing/recipe-listing}}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
   {{/freestyle-section}}
 
 
@@ -130,7 +140,16 @@
     {{#section.subsection name='Recipe item'}}
 
       {{#freestyle-usage 'recipe-item' title='Recipe item' usageTitle='Usage'}}
-        {{recipe-listing/recipe-listing recipe=model}}
+
+        {{#list-filter filter=(action 'filterByCategory' 'Main course') as |recipeList|}}
+          <ul class="grid grid-25">
+            {{#each recipeList as |recipe|}}
+              <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+            {{/each}}
+          </ul>
+        {{/list-filter}}
+
+
       {{/freestyle-usage}}
 
     {{/section.subsection}}
