@@ -14,9 +14,14 @@ export default DS.Model.extend({
   numberOfServices: DS.attr('string'),
   preparationTime: DS.attr('string'),
   totalTime: DS.attr(),
-  category: DS.belongsTo('category'),
-  image: DS.belongsTo('image'),
   reviews: DS.hasMany('review'),
   tags: DS.hasMany('tag'),
-  texts: DS.attr('string')
+  texts: DS.attr('string'),
+  // recipe category
+  category: DS.belongsTo('category'),
+  category_name: DS.belongsTo('category'),
+  // recipe image
+  image: DS.belongsTo('image'),
+  // category image
+  category_image: DS.belongsTo('image')
 });
