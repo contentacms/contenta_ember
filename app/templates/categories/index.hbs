@@ -1,12 +1,19 @@
 <div class="wrapper">
     <div class="container">
 
-        <h2>Recipe categories</h2>
+      <h2>Recipe categories</h2>
+
+      <div local-class="card-image" class="card-image">
+
+        <img src="{{category.category_image.thumbnail.url}}" alt="{{category.categoryImageFile.url}}">
+
+      </div>
 
         <ul class="grid grid-25">
             {{#each categories as |category|}}
                 <li class="grid-item card">{{category-listing/category-listing category=category}}</li>
             {{/each}}
         </ul>
+
     </div>
 </div>

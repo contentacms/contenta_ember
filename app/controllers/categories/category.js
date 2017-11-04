@@ -5,7 +5,9 @@ export default Ember.Controller.extend({
     filterByCategory(param) {
       if (param !== '') {
         return this.get('store').query('recipe', {
-          category: param
+          filter: {
+            'category.name': { value: param}
+          },
         });
       } else {
         return this.get('store').findAll('recipe');

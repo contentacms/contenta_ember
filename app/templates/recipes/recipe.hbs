@@ -98,16 +98,36 @@
 
     </div>
 
-    <div class="container">
-        <h2>More recipes (these should be related to current recipe category)</h2>
 
-        {{#list-filter filter=(action 'latestRecipes') as |recipeList|}}
-            <ul class="grid grid-25">
-                {{#each recipeList as |recipe|}}
-                    <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
-                {{/each}}
-            </ul>
+
+
+    <div class="container">
+        <h2>More {{ recipe.category.name }} recipes</h2>
+
+        {{#list-filter filter=(action 'filterByCategory' recipe.category.name) as |recipeList|}}
+
+          <ul class="grid grid-25">
+            {{#each recipeList as |recipe|}}
+              {{ catgeory.name }}
+              <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+            {{/each}}
+          </ul>
+
         {{/list-filter}}
+
+    </div>
+
+
+      <div class="container">
+        <h2>Latest recipes</h2>
+
+      {{#list-filter filter=(action 'latestRecipes') as |recipeList|}}
+          <ul class="grid grid-25">
+              {{#each recipeList as |recipe|}}
+                  <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+              {{/each}}
+          </ul>
+      {{/list-filter}}
 
     </div>
 

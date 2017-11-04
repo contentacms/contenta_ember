@@ -57,5 +57,32 @@ export default Ember.Component.extend({
       'name': 'white',
       'base': '#ffffff'
     }
+  },
+  //recipe: true,
+  actions: {
+    latestRecipes(param) {
+      return this.get('store').query('recipe', {
+        sort: "-updatedAt",
+        sortAscending: false,
+        category: param,
+        page: {
+          limit: 4
+        }
+      });
+    },
+
+    filterByCategory(param) {
+      if (param !== '') {
+        return this.get('store').query('recipe', {
+          filter: {
+            'category.name': { value: param}
+          },
+          page: {
+            limit: 1
+          }
+        });
+      }
+    }
   }
+
 });

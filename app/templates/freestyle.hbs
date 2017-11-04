@@ -1,9 +1,11 @@
 {{#freestyle-guide
-  title='Ember Freestyle'
-  subtitle='Living Style Guide'
-  }}
+    title='Ember Freestyle'
+    subtitle='Living Style Guide'
+}}
+
 
   {{#freestyle-section name='Visual Style' as |section|}}
+
 
     {{#section.subsection name='Typography'}}
 
@@ -17,18 +19,146 @@
 
     {{/section.subsection}}
 
+
     {{#section.subsection name='Color'}}
 
       {{#freestyle-usage 'fp' title='Freestyle Palette' usageTitle='Usage'}}
         {{freestyle-palette
-        colorPalette=colorPalette
-        title='Dummy App Color Palette'
-        description='This component displays the color palette specified in freestyle/palette.json'
+            colorPalette=colorPalette
+            title='Dummy App Color Palette'
+            description='This component displays the color palette specified in freestyle/palette.json'
         }}
       {{/freestyle-usage}}
 
     {{/section.subsection}}
 
+
   {{/freestyle-section}}
+
+
+
+
+  {{#freestyle-section name='Site-wide components' as |section|}}
+
+
+    {{#section.subsection name='Site header'}}
+
+      {{#freestyle-usage 'shelf-area' title='Shelf area' usageTitle='Usage'}}
+        {{ shelf-area }}
+      {{/freestyle-usage}}
+
+
+      {{#freestyle-usage 'header-area' title='Header area' usageTitle='Usage'}}
+        {{ header-area }}
+      {{/freestyle-usage}}
+
+
+      {{#freestyle-usage 'header-reduced' title='Header reduced' usageTitle='Usage'}}
+        {{ header-reduced }}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+    {{#section.subsection name='Footer header'}}
+
+      {{#freestyle-usage 'footer-area' title='Footer area' usageTitle='Usage'}}
+        {{ footer-area }}
+      {{/freestyle-usage}}
+
+
+    {{/section.subsection}}
+
+
+  {{/freestyle-section}}
+
+
+
+  {{#freestyle-section name='Banner components' as |section|}}
+
+
+    {{#section.subsection name='Banner area'}}
+
+      {{#freestyle-usage 'banner-area' title='Banner area' usageTitle='Usage'}}
+        {{ banner-area }}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+    {{#section.subsection name='Highlight area'}}
+
+      {{#freestyle-usage 'highlight-area' title='Highlight area' usageTitle='Usage'}}
+        {{ highlight-area }}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+  {{/freestyle-section}}
+
+
+
+  {{#freestyle-section name='List components' as |section|}}
+
+
+    {{#section.subsection name='Article listing area'}}
+
+      {{#freestyle-usage 'article-listing' title='Article listing' usageTitle='Usage'}}
+        {{ article-listing/article-listing }}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+
+    {{#section.subsection name='Recipe listing area'}}
+
+      {{#freestyle-usage 'recipe-listing' title='Recipe listing' usageTitle='Usage'}}
+        {{recipe-listing/recipe-listing}}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+  {{/freestyle-section}}
+
+
+
+  {{#freestyle-section name='Item components' as |section|}}
+
+
+    {{#section.subsection name='Article item'}}
+
+      {{#freestyle-usage 'article-item' title='Article item' usageTitle='Usage'}}
+        {{article-listing/article-listing article=article}}
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+    {{#section.subsection name='Recipe item'}}
+
+      {{#freestyle-usage 'recipe-item' title='Recipe item' usageTitle='Usage'}}
+
+        {{#list-filter filter=(action 'filterByCategory' 'Main course') as |recipeList|}}
+          <ul class="grid grid-25">
+            {{#each recipeList as |recipe|}}
+              <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+            {{/each}}
+          </ul>
+        {{/list-filter}}
+
+
+      {{/freestyle-usage}}
+
+    {{/section.subsection}}
+
+
+  {{/freestyle-section}}
+
+
+
+
 
 {{/freestyle-guide}}
