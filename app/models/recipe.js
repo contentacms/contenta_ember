@@ -15,8 +15,8 @@ export default DS.Model.extend({
   preparationTime: DS.attr('string'),
   totalTime: DS.attr(),
   category: DS.belongsTo('category'),
+  tag: DS.belongsTo('tag'),
   image: DS.belongsTo('image'),
   reviews: DS.hasMany('review'),
-  tags: DS.hasMany('tag'),
   texts: DS.attr('string')
 });

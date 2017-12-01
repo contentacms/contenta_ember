@@ -14,6 +14,7 @@ export default Ember.Controller.extend({
               page: {
                 limit: 3,
               }
+
             });
             //    return Ember.Controller.firstTenRecipes;
             //    return this.get('store').findAll('recipe');
@@ -23,6 +24,7 @@ export default Ember.Controller.extend({
               page: {
                 limit: 3,
               }
+
             });
           }
         }

@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="container">
+
+    <h2>Recipe tags</h2>
+
+    <div local-class="card-image" class="card-image">
+
+      <img src="{{tag.tag_image.thumbnail.url}}" alt="{{tag.tagImageFile.url}}">
+
+    </div>
+
+    <ul class="grid grid-25">
+      {{#each tags as |tag|}}
+        <li class="grid-item card">{{tag-listing/tag-listing tag=tag}}</li>
+      {{/each}}
+    </ul>
+
+  </div>
+</div>
