@@ -1,0 +1,29 @@
+<div class="wrapper category">
+  <div class="container">
+
+    <div class="grid grid-50">
+
+      <h2 class="page-title">{{ tag.name }}</h2>
+
+      <div local-class="card-image" class="card-image">
+
+        <img src="{{tag.tag_image.thumbnail.url}}" alt="{{tag.tagImageFile.url}}">
+
+      </div>
+
+    </div>
+
+    {{#list-filter filter=(action 'filterByTag' tag.name) as |List|}}
+
+      <ul class="grid grid-25">
+        {{#each List as |recipe|}}
+          <li class="grid-item card">
+            {{recipe-listing/recipe-listing recipe=recipe}}
+          </li>
+        {{/each}}
+      </ul>
+
+    {{/list-filter}}
+
+  </div>
+</div>

@@ -66,7 +66,6 @@
               </li>
           </ul>
 
-<!-- enable these to see single recipes that conform to the 4 themed filters above
            <h2>Dinners to Impress</h2>
            {{#list-filter filter=(action 'getThemeOne' ) as |recipeList|}}
                <ul class="grid grid-25">
@@ -105,7 +104,6 @@
                    {{/each}}
                </ul>
            {{/list-filter}}
--->
 
       </div>
     </div>
@@ -154,7 +152,7 @@
                         <ul class="grid grid-25">
                             {{#each tagList as |tag|}}
                                 <li class="grid-item">
-                                    {{#link-to 'categories.category' tag.id}}
+                                    {{#link-to 'tags.tag' tag.id}}
                                         {{tag.name}}
                                     {{/link-to}}
                                 </li>

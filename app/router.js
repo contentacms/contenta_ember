@@ -29,7 +29,11 @@ Router.map(function() {
   this.route('notfound', {path: '*path'});
 
   // style guide
-    this.route('freestyle');
+  this.route('freestyle');
+
+  this.route('tags', function() {
+    this.route('tag', { path: '/:tag_id' });
+  });
 });
 
 export default Router;

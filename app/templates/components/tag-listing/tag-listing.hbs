@@ -1,0 +1,13 @@
+{{#if tag}}
+
+  <div class="card-content">
+
+    {{#link-to 'tags.tag' tag.id}}{{tag.name}}{{/link-to}}
+
+  </div>
+
+{{else}}
+
+  <p>Sorry, There aren't any tags at this time.</p>
+
+{{/if}}
