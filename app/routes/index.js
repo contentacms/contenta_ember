@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       tags: this.store.findAll('tag'),
       categories: this.store.findAll('category'),
       recipes:  this.store.query('recipe', {
-        sort: "-createdAt",
+        sortBy: "-createdAt",
         page: {
           limit: 30,
         },

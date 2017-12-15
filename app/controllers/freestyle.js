@@ -62,7 +62,7 @@ export default Ember.Component.extend({
   actions: {
     latestRecipes(param) {
       return this.get('store').query('recipe', {
-        sort: "-updatedAt",
+        sortBy: "-updatedAt",
         sortAscending: false,
         category: param,
         page: {

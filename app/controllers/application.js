@@ -90,7 +90,7 @@ export default Ember.Controller.extend({
 
     featureRecipes(param) {
       return this.get('store').query('recipe', {
-        sort: "-updatedAt",
+        sortBy: "-updatedAt",
         sortAscending: false,
         category: param,
         page: {

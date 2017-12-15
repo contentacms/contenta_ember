@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       tag: this.store.findRecord('tag', params.tag_id),
       recipes:  this.store.query('recipe', {
-        sort: "-createdAt",
+        sortBy: "-createdAt",
         page: {
           limit: 30,
         }
