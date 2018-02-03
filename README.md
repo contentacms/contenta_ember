@@ -1,6 +1,6 @@
 # Contenta – Ember Frontend
 
-![screenshot of Contenta Ember Umami homepage](dist/assets/images/umami-ember-homepage.png)
+![screenshot of Contenta Ember Umami homepage](umami-ember-homepage.png)
 
 This README outlines the details of collaborating on this Ember application.
 
