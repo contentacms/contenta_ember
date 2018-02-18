@@ -18,10 +18,11 @@ h4.is-promoted {
 }
 
 .card-image {
-  max-height: 300px;
+  max-height: 240px;
   overflow: hidden;
   margin: -1rem -1rem 0 -1rem;
   position: relative;
+  border-bottom: 6px solid $grey-light;
   img {
     width: calc(100% + 2rem);
     margin: 0 -1rem;
@@ -38,8 +39,15 @@ h4.is-promoted {
   }
 }
 
+.tag.card-image,
+.category.card-image {
+  border: 0 solid;
+}
+
 .promoted .card:first-child {
   .card-image {
+    border: 0 solid;
+    border-top: 6px solid $grey-light;
     margin: 1rem -1rem -1rem -1rem;
     img {
       margin: -4rem -1rem 0;
@@ -114,4 +122,19 @@ h4.is-promoted {
 
 .card-content a {
   margin: 0.5rem 0 0;
+}
+
+
+:not(.grid-double).grid-25 .card-image {
+  display: flex;
+  max-height: 240px;
+  overflow: hidden;
+  margin: -1rem -1rem 0 -1rem;
+  position: relative;
+  border-bottom: 6px solid $grey-light;
+  img {
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
+    height: 240px;
+  }
 }

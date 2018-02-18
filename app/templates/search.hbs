@@ -1,0 +1,98 @@
+<div class="wrapper">
+<div class="container">
+
+  <h1>Search</h1>
+
+{{#filter-content content=recipes properties="title tags.@each category.name" as
+|filteredRecipes
+query|}}
+
+  <div class="grid grid-33 filters">
+
+    <div class="grid-item">
+      <h3>Recipes</h3>
+      {{input value=query placeholder="filter by recipe or category"}}
+      <p class="{{if input.query '' 'invisible'}}">
+        Showing {{filteredRecipes.length}}/{{recipes.length}} recipes
+        matching
+      </p>
+      <p>
+        Showing {{filteredRecipes.length}}/{{recipes.length}} recipes
+        matching
+      </p>
+    </div>
+
+    <div class="grid-item">
+      <h3>Category</h3>
+
+      {{#ui-dropdown class="fluid multiple selection" selected=category
+                     onChange=
+          (action (mut category))}}
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Category</div>
+        <div class="menu">
+          {{#each categories as |category|}}
+            <div class="item" data-value="{{category.name}}">
+              {{category.name}}
+            </div>
+          {{/each}}
+        </div>
+      {{/ui-dropdown}}
+
+    <hr>
+
+      <select onchange={{action "filterByCategory" value="target.value"}}>
+        {{#each categories as |category|}}
+          <option value={{category.name}} selected={{eq category category
+          .name}}>{{category
+          .name}}</option>
+        {{/each}}
+      </select>
+
+      {{#select-box/native as
+            |sb|}}
+        {{#each categories as |category|}}
+          {{sb.option value=category label=category.name}}
+        {{/each}}
+      {{/select-box/native}}
+
+    </div>
+
+
+    <div class="grid-item">
+      <h3>Tag</h3>
+
+      {{#ui-dropdown class="fluid multiple selection" selected=tag onChange=
+          (action (mut tag))}}
+        <i class="dropdown icon"></i>
+        <div class="default text">Select Country</div>
+        <div class="menu">
+          {{#each tags as |tag|}}
+            <div class="item" data-value="{{tag.name}}">
+              {{tag.name}}
+            </div>
+          {{/each}}
+        </div>
+      {{/ui-dropdown}}
+
+    </div>
+
+  </div>
+
+  <ul class="grid grid-25">
+    {{#each filteredRecipes as |recipe|}}
+      <li class="grid-item card">{{recipe-listing/recipe-listing recipe=recipe}}</li>
+    {{/each}}
+  </ul>
+
+
+{{/filter-content}}
+
+
+
+  {{outlet}}
+
+</div>
+</div>
+
+

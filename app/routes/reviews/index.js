@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
       reviews:  this.store.query('review', {
-        sort: "-createdAt",
+        sortBy: "-createdAt",
         page: {
           limit: 10,
         },

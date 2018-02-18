@@ -24,8 +24,14 @@
         {{icon-prep-time}} <span>{{recipe.preparationTime}} min</span>
     </div>
 
-    <div class="tag">
+    <div class="meta">
       <p class="category">{{recipe.category.name}}</p>
+      <ul class="tags">
+        {{#each recipe.tags as |tag|}}
+          <li>{{tag.name}}</li>
+        {{/each}}
+      </ul>
+
     </div>
 
     {{#link-to 'recipes.recipe' recipe.id class='button' aria-disabled='false' tabindex='0'}}Read full recipe{{/link-to}}
