@@ -1,6 +1,9 @@
 @import 'variables';
 
 
+.invisible {
+  visibility: hidden;
+}
 
 .shelf {
   background: $grey-light;
@@ -208,9 +211,66 @@ ul.tags {
 .recipe-image {
   position: relative;
   overflow: hidden;
+  max-height: 340px;
+  margin: 0 0 1rem;
+  border: 6px solid $grey-light;
+  img {
+    width: 100%;
+  }
+  .is-promoted {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background: $orange;
+    color: $white;
+    padding: 0 0.5rem;
+  }
+
 }
 
 .highlight.full {
   background: $grey-light url(/assets/images/open-book-outline.svg) 8% 15% no-repeat;
   background-size: 30%;
+}
+
+.filters {
+  padding: 1rem !important;
+  margin-bottom: 1rem !important;
+  text-align: left;
+  background-color: $bright-white;
+
+  input {
+    width: 100%;
+    word-wrap: break-word;
+    line-height: 1em;
+    white-space: normal;
+    outline: 0;
+    min-width: 14em;
+    min-height: 2.71428571em;
+    background: #FFFFFF;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.87);
+    box-shadow: none;
+    border-radius: 0.28571429rem;
+    height: 38px;
+    padding: 0.5em;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    visibility: visible;
+    &::placeholder {
+      color: #bfbfbfde;
+    }
+
+  }
+
+}
+
+.tag-cloud {
+  padding: 0 0 1rem 0;
+  span {
+    display: inline-block;
+    background-color: $grey-med;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
 }

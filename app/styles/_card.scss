@@ -18,7 +18,7 @@ h4.is-promoted {
 }
 
 .card-image {
-  max-height: 300px;
+  max-height: 240px;
   overflow: hidden;
   margin: -1rem -1rem 0 -1rem;
   position: relative;
@@ -114,4 +114,30 @@ h4.is-promoted {
 
 .card-content a {
   margin: 0.5rem 0 0;
+}
+
+.grid-25 .card-image {
+  display: flex;
+  overflow: hidden;
+  margin: -1rem -1rem 0 -1rem;
+  position: relative;
+  border-bottom: 6px solid $grey-light;
+  img {
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
+  }
+}
+
+:not(.grid-double).grid-25 .card-image {
+  display: flex;
+  max-height: 240px;
+  overflow: hidden;
+  margin: -1rem -1rem 0 -1rem;
+  position: relative;
+  border-bottom: 6px solid $grey-light;
+  img {
+    width: calc(100% + 2rem);
+    margin: 0 -1rem;
+    height: 240px;
+  }
 }
