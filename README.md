@@ -1,5 +1,7 @@
 # Contenta – Ember Frontend
 
+![screenshot of Contenta Ember Umami homepage](umami-ember-homepage.png)
+
 This README outlines the details of collaborating on this Ember application.
 
 This app is to demonstrate the Contentacms, a decoupled drupal distribution. It uses emberjs to consume the data via the json api. 
