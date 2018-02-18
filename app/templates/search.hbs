@@ -3,7 +3,7 @@
 
   <h1>Search</h1>
 
-{{#filter-content content=recipes properties="title cateogry" as
+{{#filter-content content=recipes properties="title tags.@each category.name" as
 |filteredRecipes
 query|}}
 
@@ -11,14 +11,14 @@ query|}}
 
     <div class="grid-item">
       <h3>Recipes</h3>
-      {{input value=query placeholder="filter by recipe"}}
+      {{input value=query placeholder="filter by recipe or category"}}
       <p class="{{if input.query '' 'invisible'}}">
         Showing {{filteredRecipes.length}}/{{recipes.length}} recipes
         matching
       </p>
       <p>
-      Showing {{filteredRecipes.length}}/{{recipes.length}} recipes
-      matching
+        Showing {{filteredRecipes.length}}/{{recipes.length}} recipes
+        matching
       </p>
     </div>
 
@@ -39,9 +39,7 @@ query|}}
         </div>
       {{/ui-dropdown}}
 
-
     <hr>
-
 
       <select onchange={{action "filterByCategory" value="target.value"}}>
         {{#each categories as |category|}}
@@ -76,7 +74,6 @@ query|}}
           {{/each}}
         </div>
       {{/ui-dropdown}}
-
 
     </div>
 
